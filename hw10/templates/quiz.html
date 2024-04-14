@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    let question = {{ question| tojson}};
+    $(document).ready(function () {
+        $("#next_button").click(function () {
+            if ("{{question.next_question}}" == "end") {
+                window.location.href = "/homepage";
+            } else {
+                window.location.href = "/quiz/{{question.next_question}}";
+            }
+        });
+    });
+
+</script>
+
+<button>
+    <a href="/quiz">Start Quiz</a>
+</button>
+
+<button>check</button>
+<button id="next_button"> Next </button>
+
+{% endblock %}
