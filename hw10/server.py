@@ -1,55 +1,15 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, url_for
 from flask import render_template
-from flask import Response, request, jsonify
+from flask import request, jsonify, session
+from flask_session import Session
+from data import lessons, quiz_questions
+
 app = Flask(__name__)
 
-# represent data in JSON
-lessons = {
-    "1": {
-        "lesson_id": "1",
-        "title": "Lesson 1",
-        "image": "This is the first lesson",
-        "text": "This is the first lesson",
-        "next_lesson": "2"
-    },
-    "2": {
-        "lesson_id": "2",
-        "title": "Lesson 2",
-        "image": "This is the second lesson",
-        "text": "This is the second lesson",
-        "next_lesson": "end"
-    }
-}
-quiz_questions = {
-    "1": {
-        "quiz_id": "1",
-        "question": "Which one is Sichuan Hotpot?",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer1",
-        "next_question": "2"
-    },
-    "2": {
-        "quiz_id": "2",
-        "question": "Question2",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer3",
-        "next_question": "3"
-    },
-    "3": {
-        "quiz_id": "3",
-        "question": "Question3",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer4",
-        "next_question": "end"
-    },
-    "end": {
-        "quiz_id": "end",
-        "question": "End of quiz",
-        "answers": [],
-        "correct_answer": "",
-        "next_question": ""
-    }
-}
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
 
 @app.route('/')
 def homepage():
@@ -64,12 +24,49 @@ def learn(lesson_id):
 def start_quiz():
     return render_template('start_quiz.html')
 
-@app.route('/quiz/<quiz_id>')
+
+@app.route('/quiz/<quiz_id>', methods=['GET', 'POST'])
 def quiz(quiz_id):
     question = quiz_questions.get(str(quiz_id))
     if question is None:
         return "Question not found", 404
-    return render_template('quiz.html', question=question, quiz_id=quiz_id)
+
+    feedback = None
+    show_next = False  # Controls the display of the "Next" button
+    form_disabled = False  # Disable form after submission
+
+
+    if request.method == 'POST':
+        # Store user's choice in session
+        user_answer = request.form.get('answer')
+        if user_answer:
+            # Update session with the user's answer
+            if 'answers' not in session:
+                session['answers'] = {}
+            session['answers'][quiz_id] = user_answer
+            # Provide immediate feedback
+            if user_answer == question['correct_answer']:
+                feedback = 'Correct!'
+            else:
+                feedback = 'Incorrect!'
+            show_next = True  # Show the "Next" button only after an answer is submitted.
+            form_disabled = True  # Disable the form to prevent re-submission
+
+    if question['next_question'] == "end" and show_next:
+        return redirect(url_for('results'))  # Redirect to results page
+
+    return render_template('quiz.html', question=question, feedback=feedback, quiz_id=quiz_id, show_next=show_next, form_disabled=form_disabled)
+
+
+@app.route('/results')
+def results():
+    score = 0
+    for qid, ans in session.get('answers', {}).items():
+        correct_answer = quiz_questions[qid]['correct_answer']
+        if ans == correct_answer:
+            score += 1
+    return render_template('results.html', score=score, total=len(quiz_questions))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

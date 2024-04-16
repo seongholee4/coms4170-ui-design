@@ -15,15 +15,32 @@
     });
 </script>
 
+
 <div class="container mt-4">
     <h1>{{ question.question }}</h1>
-    <div>
-        {% for answer in question.answers %}
-        <button class="btn btn-info my-2">{{ answer }}</button>
-        {% endfor %}
-    </div>
-    <button id="next_button" class="btn btn-primary">Next</button>
+
+    {% if feedback %}
+        <div class="alert alert-info">{{ feedback }}</div>
+    {% endif %}
+
+    <form action="/quiz/{{ question.quiz_id }}" method="post">
+        <fieldset {% if form_disabled %}disabled{% endif %}>
+            <div>
+                {% for answer in question.answers %}
+                    <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
+                    <label for="{{ answer }}">{{ answer }}</label><br>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary" {% if form_disabled %}disabled{% endif %}>Submit</button>
+        </fieldset>
+    </form>
+
+    {% if show_next %}
+        <button onclick="window.location.href='{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}'" class="btn btn-primary">Next</button>
+    {% endif %}
     <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
 </div>
+
+
 
 {% endblock %}
