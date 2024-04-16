@@ -23,7 +23,7 @@ lessons = {
 quiz_questions = {
     "1": {
         "quiz_id": "1",
-        "question": "Question1",
+        "question": "Which one is Sichuan Hotpot?",
         "answers": ["answer1", "answer2", "answer3", "answer4"],
         "correct_answer": "answer1",
         "next_question": "2"
@@ -33,7 +33,21 @@ quiz_questions = {
         "question": "Question2",
         "answers": ["answer1", "answer2", "answer3", "answer4"],
         "correct_answer": "answer3",
+        "next_question": "3"
+    },
+    "3": {
+        "quiz_id": "3",
+        "question": "Question3",
+        "answers": ["answer1", "answer2", "answer3", "answer4"],
+        "correct_answer": "answer4",
         "next_question": "end"
+    },
+    "end": {
+        "quiz_id": "end",
+        "question": "End of quiz",
+        "answers": [],
+        "correct_answer": "",
+        "next_question": ""
     }
 }
 
@@ -46,9 +60,9 @@ def learn(lesson_id):
     lesson = lessons[lesson_id]
     return render_template('learn.html', lesson = lesson)
 
-@app.route('/quiz')
+@app.route('/start_quiz')
 def start_quiz():
-    return redirect('/quiz/1')
+    return render_template('start_quiz.html')
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
@@ -56,11 +70,6 @@ def quiz(quiz_id):
     if question is None:
         return "Question not found", 404
     return render_template('quiz.html', question=question, quiz_id=quiz_id)
-
-# @app.route('/quiz/<quiz_id>')
-# def quiz(quiz_id):
-#     question = quiz_questions[quiz_id]
-#     return render_template('quiz.html', question = question)
 
 if __name__ == '__main__':
     app.run(debug=True)
