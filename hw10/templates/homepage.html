@@ -3,19 +3,19 @@
 
 <script type="text/javascript">
     function startLesson() {
-        window.location.href = '/learn/1';
+        sessionStorage.setItem('startTime', Date.now());  // Set the start time
+        window.location.href = '/learn/1';  // Redirect to the first lesson
     }
 </script>
 
 <section class="jumbotron text-center">
     <div class="container">
         <h1>Explore Hotpot Styles</h1>
-        <p>Learn to identify various global hotpot styles and test your knowledge by taking the quiz!</p>
+        <p>Learn to identify various global hotpot styles and quiz your knowledge!</p>
         <button onclick="startLesson()" class="btn btn-primary" title="Learn about different types of hotpots from around the world!">Start Lesson</button>
     </div>
 </section>
 
 <div class="container" id=""></div>
-
 
 {% endblock %}
