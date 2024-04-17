@@ -3,8 +3,19 @@
 {% block content %}
 
 <script type="text/javascript">
-    let question = {{ question | tojson }};
     $(document).ready(function () {
+        // Display final elapsed time
+        const startTime = sessionStorage.getItem('startTime');
+        const endTime = Date.now();
+        const elapsed = endTime - parseInt(startTime);
+        const seconds = Math.floor((elapsed / 1000) % 60);
+        const minutes = Math.floor((elapsed / 1000 / 60) % 60);
+        $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
+
+        // Clear the timer from session storage
+        sessionStorage.removeItem('startTime');
+
+        // Navigation logic
         $("#next_button").click(function () {
             if ("{{question.next_question}}" == "end") {
                 window.location.href = "/";
@@ -15,9 +26,11 @@
     });
 </script>
 
-
 <div class="container mt-4">
     <h1>{{ question.question }}</h1>
+
+    <!-- Timer display -->
+    <div id="timerDisplay" class="alert alert-success"></div>
 
     {% if feedback %}
         <div class="alert alert-info">{{ feedback }}</div>
@@ -40,7 +53,5 @@
     {% endif %}
     <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
 </div>
-
-
 
 {% endblock %}
