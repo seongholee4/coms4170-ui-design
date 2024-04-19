@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    function startQuiz() {
+        sessionStorage.removeItem('startTime');  // Clear the timer
+        window.location.href = '/quiz/1';  // Start the first question of the quiz
+    }
+
+    $(document).ready(function () {
+        const startTime = sessionStorage.getItem('startTime');
+        if (startTime) {
+            const endTime = Date.now();
+            const elapsed = endTime - parseInt(startTime);
+            const seconds = Math.floor((elapsed / 1000) % 60);
+            const minutes = Math.floor((elapsed / 1000 / 60) % 60);
+            document.getElementById('timerDisplay').innerText = `Total Learning Time: ${minutes} minutes, ${seconds} seconds`;
+        }
+    });
+</script>
+
+<div class="jumbotron text-center">
+    <h1>Start Your Quiz</h1>
+    <p>Test your knowledge by starting the quiz now!</p>
+    <!-- Timer display -->
+    <div id="timerDisplay" class="alert alert-success"></div>
+    <button onclick="startQuiz()" class="btn btn-primary">Start Quiz</button>
+</div>
+
+{% endblock %}
