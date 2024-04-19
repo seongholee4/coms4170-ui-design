@@ -1,14 +1,12 @@
 from flask import Flask, redirect, url_for
 from flask import render_template
-from flask import request, jsonify, session
-from flask_session import Session
+from flask import request, jsonify
 from data import lessons, quiz_questions
 
 app = Flask(__name__)
 
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+# Temporary storage for user answers
+user_responses = {}
 
 
 @app.route('/')
@@ -22,8 +20,8 @@ def learn(lesson_id):
 
 @app.route('/start_quiz')
 def start_quiz():
+    user_responses.clear()  # Reset answers at the start of a quiz
     return render_template('start_quiz.html')
-
 
 @app.route('/quiz/<quiz_id>', methods=['GET', 'POST'])
 def quiz(quiz_id):
@@ -35,15 +33,11 @@ def quiz(quiz_id):
     show_next = False  # Controls the display of the "Next" button
     form_disabled = False  # Disable form after submission
 
-
     if request.method == 'POST':
-        # Store user's choice in session
+        # Store user's choice in user_responses
         user_answer = request.form.get('answer')
         if user_answer:
-            # Update session with the user's answer
-            if 'answers' not in session:
-                session['answers'] = {}
-            session['answers'][quiz_id] = user_answer
+            user_responses[quiz_id] = user_answer
             # Provide immediate feedback
             if user_answer == question['correct_answer']:
                 feedback = 'Correct!'
@@ -53,15 +47,14 @@ def quiz(quiz_id):
             form_disabled = True  # Disable the form to prevent re-submission
 
     if question['next_question'] == "end" and show_next:
-        return redirect(url_for('results'))  # Redirect to results page
+        return redirect(url_for('results')) # Redirect to results page
 
     return render_template('quiz.html', question=question, feedback=feedback, quiz_id=quiz_id, show_next=show_next, form_disabled=form_disabled)
-
 
 @app.route('/results')
 def results():
     score = 0
-    for qid, ans in session.get('answers', {}).items():
+    for qid, ans in user_responses.items():
         correct_answer = quiz_questions[qid]['correct_answer']
         if ans == correct_answer:
             score += 1

@@ -50,6 +50,46 @@ quiz_questions = {
         "question": "Question3",
         "answers": ["answer1", "answer2", "answer3", "answer4"],
         "correct_answer": "answer4",
+        "next_question": "4"
+    },
+    # Matching Questions (Question 4):
+    # This type could be implemented using a drag-and-drop interface or drop-down menus for each ingredient to select the correct type of hotpot.
+    # JavaScript can be utilized to verify the matches against the correct answers.
+    "4": {
+        "quiz_id": "4",
+        "question": "Match the following ingredients to their corresponding hotpot type",
+        "answers": {
+            "Beef slices": "Sichuan Hotpot",
+            "Kimchi": "Korean Hotpot",
+            "Seafood": "Japanese Hotpot",
+            "Tofu": "Vegetarian Hotpot"
+        },
+        "correct_answer": {
+            "Beef slices": "Sichuan Hotpot",
+            "Kimchi": "Korean Hotpot",
+            "Seafood": "Japanese Hotpot",
+            "Tofu": "Vegetarian Hotpot"
+        },
+        "next_question": "5"
+    },
+    # Drag-and-Drop Questions (Question 5):
+    # A graphical interface where users can drag ingredients into an image of a pot.
+    # JavaScript can check if the correct ingredients are placed in the pot.
+    "5": {
+        "quiz_id": "5",
+        "question": "Drag and drop the correct ingredients into the Sichuan Hotpot",
+        "answers": ["Beef slices", "Noodles", "Lamb", "Mushrooms", "Bok choy"],
+        "correct_answer": ["Beef slices", "Lamb", "Mushrooms"],
+        "next_question": "6"
+    },
+    # Multiple Choice with Images:
+    "6": {
+        "quiz_id": "6",
+        "question": "Identify the ingredient shown in the image",
+        "answers": ["Image of Beef slices", "Image of Tofu", "Image of Noodles", "Image of Mushrooms"],
+        "correct_answer": "Image of Tofu",
         "next_question": "end"
     }
 }
+
+
