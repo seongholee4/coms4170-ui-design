@@ -15,7 +15,7 @@
             const elapsed = endTime - parseInt(startTime);
             const seconds = Math.floor((elapsed / 1000) % 60);
             const minutes = Math.floor((elapsed / 1000 / 60) % 60);
-            document.getElementById('timerDisplay').innerText = `Total Learning Time: ${minutes} minutes, ${seconds} seconds`;
+            $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
         }
     });
 </script>
