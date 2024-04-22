@@ -3,7 +3,7 @@
 {% block content %}
 
 <script type="text/javascript">
-    let lesson = {{ lesson| tojson}};
+    // let lesson = {{ lesson| tojson}};
     $(document).ready(function () {
         $("#next_button").click(function () {
             if ("{{lesson.next_lesson}}" == "end") {

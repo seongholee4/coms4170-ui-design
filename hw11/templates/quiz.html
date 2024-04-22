@@ -3,7 +3,7 @@
 {% block content %}
 
 <script type="text/javascript">
-    let question = {{ question | tojson }};
+    // let question = {{ question | tojson }};
     $(document).ready(function () {
         $("#next_button").click(function () {
             if ("{{question.next_question}}" == "end") {
@@ -36,7 +36,7 @@
     </form>
 
     {% if show_next %}
-        <button onclick="window.location.href='{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}'" class="btn btn-primary">Next</button>
+        <button onclick="window.location.href=`{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}`" class="btn btn-primary">Next</button>
     {% endif %}
     <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
 </div>
