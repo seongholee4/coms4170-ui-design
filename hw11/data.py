@@ -34,62 +34,122 @@ quiz_questions = {
     "1": {
         "quiz_id": "1",
         "question": "Which one is Sichuan Hotpot?",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer1",
+        "answers": {
+            "A": "Image1",
+            "B": "Image2",
+            "C": "Image3",
+            "D": "Image4"
+        },
+        "correct_answer": "B",
         "next_question": "2"
     },
     "2": {
         "quiz_id": "2",
-        "question": "Question2",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer3",
+        "question": "Which one is Sukiyaki Hotpot?",
+        "answers": {
+            "A": "Image1",
+            "B": "Image2",
+            "C": "Image3",
+            "D": "Image4"
+        },
+        "correct_answer": "A",
         "next_question": "3"
     },
     "3": {
         "quiz_id": "3",
-        "question": "Question3",
-        "answers": ["answer1", "answer2", "answer3", "answer4"],
-        "correct_answer": "answer4",
+        "question": "Which hotpot might be the healthiest one?",
+        "answers": {
+            "A": "Image1",
+            "B": "Image2",
+            "C": "Image3",
+            "D": "Image4"
+        },
+        "correct_answer": "C",
         "next_question": "4"
     },
-    # Matching Questions (Question 4):
-    # This type could be implemented using a drag-and-drop interface or drop-down menus for each ingredient to select the correct type of hotpot.
-    # JavaScript can be utilized to verify the matches against the correct answers.
     "4": {
         "quiz_id": "4",
-        "question": "Match the following ingredients to their corresponding hotpot type",
+        "question": "Which dipping sauce should you choose if you are tasting Sichuan Hotpot?",
         "answers": {
-            "Beef slices": "Sichuan Hotpot",
-            "Kimchi": "Korean Hotpot",
-            "Seafood": "Japanese Hotpot",
-            "Tofu": "Vegetarian Hotpot"
+            "A": "Sauce1",
+            "B": "Sauce2",
+            "C": "Sauce3",
+            "D": "Sauce4"
         },
-        "correct_answer": {
-            "Beef slices": "Sichuan Hotpot",
-            "Kimchi": "Korean Hotpot",
-            "Seafood": "Japanese Hotpot",
-            "Tofu": "Vegetarian Hotpot"
-        },
+        "correct_answer": "C",
         "next_question": "5"
     },
-    # Drag-and-Drop Questions (Question 5):
-    # A graphical interface where users can drag ingredients into an image of a pot.
-    # JavaScript can check if the correct ingredients are placed in the pot.
     "5": {
         "quiz_id": "5",
-        "question": "Drag and drop the correct ingredients into the Sichuan Hotpot",
-        "answers": ["Beef slices", "Noodles", "Lamb", "Mushrooms", "Bok choy"],
-        "correct_answer": ["Beef slices", "Lamb", "Mushrooms"],
+        "question": "Which dipping sauce should you choose if you are tasting Sukiyaki Hotpot?",
+        "answers": {
+            "A": "Sauce1",
+            "B": "Sauce2",
+            "C": "Sauce3",
+            "D": "Sauce4"
+        },
+        "correct_answer": "A",
         "next_question": "6"
     },
-    # Multiple Choice with Images:
     "6": {
         "quiz_id": "6",
-        "question": "Identify the ingredient shown in the image",
-        "answers": ["Image of Beef slices", "Image of Tofu", "Image of Noodles", "Image of Mushrooms"],
-        "correct_answer": "Image of Tofu",
+        "question": "Which hotpot is soy sauce based?",
+        "answers": {
+            "A": "Hotpot1",
+            "B": "Hotpot2",
+            "C": "Hotpot3",
+            "D": "Hotpot4"
+        },
+        "correct_answer": "B",
+        "next_question": "7"
+    },
+    "7": {
+        "quiz_id": "7",
+        "question": "Lamb is the main meat in which hotpot?",
+        "answers": {
+            "A": "Hotpot1",
+            "B": "Hotpot2",
+            "C": "Hotpot3",
+            "D": "Hotpot4"
+        },
+        "correct_answer": "C",
+        "next_question": "8"
+    },
+    "8": {
+        "quiz_id": "8",
+        "question": "What is the name of the Swiss Hotpot?",
+        "answers": {
+            "A": "Frando",
+            "B": "Funny",
+            "C": "Fondue",
+            "D": "Fundi"
+        },
+        "correct_answer": "C",
+        "next_question": "9"
+    },
+    "9": {
+        "quiz_id": "9",
+        "question": "What does 'BUDAE' mean in English?",
+        "answers": {
+            "A": "Buddha",
+            "B": "Asian",
+            "C": "Kimchi",
+            "D": "Army"
+        },
+        "correct_answer": "D",
+        "next_question": "10"
+    },
+    "10": {
+        "quiz_id": "10",
+        "question": "How to pronounce this in Japanese?",
+        "answers": {
+            "A": "Pronunciation1",
+            "B": "Pronunciation2",
+            "C": "Pronunciation3",
+            "D": "Pronunciation4"
+        },
+        "correct_answer": "D",
         "next_question": "end"
-    }
+    },
 }
-
 
