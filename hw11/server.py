@@ -51,14 +51,14 @@ def quiz(quiz_id):
 
     return render_template('quiz.html', question=question, feedback=feedback, quiz_id=quiz_id, show_next=show_next, form_disabled=form_disabled)
 
-@app.route('/results')
+@app.route('/quiz_results')
 def results():
     score = 0
     for qid, ans in user_responses.items():
         correct_answer = quiz_questions[qid]['correct_answer']
         if ans == correct_answer:
             score += 1
-    return render_template('results.html', score=score, total=len(quiz_questions))
+    return render_template('quiz_results.html', score=score, total=len(quiz_questions))
 
 
 if __name__ == '__main__':
