@@ -6,13 +6,18 @@
         sessionStorage.setItem('startTime', Date.now());  // Set the start time
         window.location.href = '/learn/1';  // Redirect to the first lesson
     }
+    // function startQuiz() {
+    //     window.location.href = '/start_quiz';  // Redirect to the quiz
+    // }
 </script>
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1>Explore Hotpot Styles</h1>
-        <p>Learn to identify various global hotpot styles and quiz your knowledge!</p>
-        <button onclick="startLesson()" class="btn btn-primary" title="Learn about different types of hotpots from around the world!">Start Lesson</button>
+        <h1>Recognizing Different Kinds of Hotpot</h1>
+        <!-- <p>Learn to identify various global hotpot styles and quiz your knowledge!</p> -->
+        <!-- <img src="{{ url_for('static', filename='img/hotpot_image_1.png') }}" class="image" alt=""> -->
+        <button onclick="startLesson()" class="btn btn-primary custom-button" title="Learn about different types of hotpots from around the world!">Let's Get Started</button>
+        <!-- <button onclick="startQuiz()" class="btn btn-primary" title="Test your knowledge on hotpot styles!">Start Quiz</button> -->
     </div>
 </section>
 

@@ -29,16 +29,22 @@
                 {% for answer in question.answers %}
                     <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
                     <label for="{{ answer }}">{{ answer }}</label><br>
+                    <!-- {% if answer == question.correct_answer %}
+                        <span class="badge bg-success">Correct</span>
+                    {% endif %} -->
                 {% endfor %}
             </div>
-            <button type="submit" class="btn btn-primary" {% if form_disabled %}disabled{% endif %}>Submit</button>
+            <button type="submit" class="btn btn-primary custom-button" {% if form_disabled %}disabled{% endif %}>Submit</button>
         </fieldset>
     </form>
 
     {% if show_next %}
-        <button onclick="window.location.href=`{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}`" class="btn btn-primary">Next</button>
+        <button onclick="window.location.href=`{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('quiz_results') }}`" class="btn btn-primary custom-button">Next</button>
     {% endif %}
-    <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
+    <!-- ask when the user clicks the button, the button that redirect the user back to the main page -->
+    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button> -->
+    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary">Back</button> -->
+
 </div>
 
 

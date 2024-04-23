@@ -1,7 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+
 body {
+    background-color: rgb(255, 239, 208); /* Light beige */
+    font-family: 'Quicksand', 'Arial', 'sans-serif';
+}
+
+.light_beige_bg {
     background-color: rgb(255, 239, 208); /* Light beige */
 }
 
-.navbar {
-    background-color: rgb(255, 239, 208); /* Light beige */
+.light_beige_color {
+    color: rgb(255, 239, 208); /* Light beige */
 }
+
+.dark_brown_bg {
+    background-color: rgb(72, 34, 31); /* Dark brown */
+}
+
+.dark_brown_color {
+    color: rgb(72, 34, 31); /* Dark brown */
+}
+
+.custom-button {
+    background-color: rgb(72, 34, 31);
+    color: rgb(255, 239, 208);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* .image {
+    width: fit-content;
+    height: auto;
+} */
+
+/* .font_20 {
+    font-size: 20px;
+} */

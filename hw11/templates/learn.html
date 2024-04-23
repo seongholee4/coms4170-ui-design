@@ -12,6 +12,21 @@
                 window.location.href = "/learn/{{lesson.next_lesson}}";
             }
         });
+
+        // $("#previous_button").click(function () {
+        //     if ("{{lesson.lesson_id}}" == "1") {
+        //         window.location.href = "/";
+        //     } else {
+        //         prev_lesson = parseInt("{{lesson.lessson_id}}") - 1;
+        //         console.log(prev_lesson.toString());
+        //         window.location.href = "/learn/" + prev_lesson.toString();
+        //     }
+        // });
+
+        // $("#main").click(function () {
+        //     window.location.href = "/";
+        // });
+
     });
 
 </script>
@@ -20,7 +35,8 @@
 <br>
 <img src="{{lesson.image}}" alt="{{lesson.title}}" width="300" height="300"><br>
 {{lesson.text}}<br>
-<button id="next_button"> Next </button>
+<!-- <button id="previous_button" class="btn btn-primary custom-button">Previous</button> -->
+<button id="next_button" class="btn btn-primary custom-button"> Next </button>
 
 {% endblock %}
 
