@@ -4,8 +4,16 @@
 
 <script type="text/javascript">
     function startQuiz() {
-        sessionStorage.removeItem('startTime');  // Clear the timer
+        if (!sessionStorage.getItem('startTime')) {
+            sessionStorage.setItem('startTime', Date.now());  // Set the timer only if not already set
+        } else {
+            removeTimer();
+        }
         window.location.href = '/quiz/1';  // Start the first question of the quiz
+    }
+    function removeTimer() {
+        sessionStorage.removeItem('startTime');  // Clear the timer
+        $('#timerDisplay').hide();  // Hide the timer display when not active
     }
 
     $(document).ready(function () {
@@ -16,6 +24,11 @@
             const seconds = Math.floor((elapsed / 1000) % 60);
             const minutes = Math.floor((elapsed / 1000 / 60) % 60);
             $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
+            $('#timerDisplay').css('display', 'block');  // Show the timer display when active
+            $('#timerDisplay').addClass('alert alert-success');  // Add a green background to the timer display
+        } else {
+            $('#timerDisplay').text(''); // Clears the timer display when not active
+            $('#timerDisplay').hide();  // Hide the timer display when not active
         }
     });
 </script>
@@ -24,7 +37,7 @@
     <h1>Start Your Quiz</h1>
     <p>Test your knowledge by starting the quiz now!</p>
     <!-- Timer display -->
-    <div id="timerDisplay" class="alert alert-success"></div>
+    <div id="timerDisplay"></div>
     <button onclick="startQuiz()" class="btn btn-primary custom-button">Start Quiz</button>
 </div>
 
