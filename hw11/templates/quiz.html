@@ -41,8 +41,8 @@
     {% if show_next %}
         <button onclick="window.location.href=`{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}`" class="btn btn-primary custom-button">Next</button>
     {% endif %}
+    <button onclick="window.location.href='/'" class="btn btn-secondary">Main Page</button>
     <!-- ask when the user clicks the button, the button that redirect the user back to the main page -->
-    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button> -->
     <!-- <button onclick="window.location.href='/'" class="btn btn-secondary">Back</button> -->
 
 </div>

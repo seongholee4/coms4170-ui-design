@@ -7,14 +7,6 @@
     margin-bottom: 20px;
 }
 
-.custom-button {
-    margin: 20px 0;
-}
-
-.custom-button:hover {
-    background-color: rgb(67, 67, 67);
-}
-
 .title-with-lines {
     position: relative;
     display: inline-block; /* Keep the element width as per the content width */
