@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    function startQuiz() {
+        if (!sessionStorage.getItem('startTime')) {
+            sessionStorage.setItem('startTime', Date.now());  // Set the timer only if not already set
+        } else {
+            removeTimer();
+        }
+        window.location.href = '/quiz/1';  // Start the first question of the quiz
+    }
+    function removeTimer() {
+        sessionStorage.removeItem('startTime');  // Clear the timer
+        $('#timerDisplay').hide();  // Hide the timer display when not active
+    }
+
+    $(document).ready(function () {
+        const startTime = sessionStorage.getItem('startTime');
+        if (startTime) {
+            const endTime = Date.now();
+            const elapsed = endTime - parseInt(startTime);
+            const seconds = Math.floor((elapsed / 1000) % 60);
+            const minutes = Math.floor((elapsed / 1000 / 60) % 60);
+            $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
+            $('#timerDisplay').css('display', 'block');  // Show the timer display when active
+            $('#timerDisplay').addClass('alert alert-success');  // Add a green background to the timer display
+        } else {
+            $('#timerDisplay').text(''); // Clears the timer display when not active
+            $('#timerDisplay').hide();  // Hide the timer display when not active
+        }
+    });
+</script>
+
+<div class="jumbotron text-center">
+    <h1>Start Your Quiz</h1>
+    <p>Test your knowledge by starting the quiz now!</p>
+    <!-- Timer display -->
+    <button onclick="startQuiz()" class="btn btn-primary custom-button start_quiz_button">Start Quiz</button>
+    <button onclick="window.location.href='/'" class="btn btn-secondary">Main Page</button>
+    <div id="timerDisplay"></div>
+</div>
+
+{% endblock %}
