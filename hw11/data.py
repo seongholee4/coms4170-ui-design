@@ -119,10 +119,10 @@ quiz_questions = {
         "quiz_id": "8",
         "question": "What is the name of the Swiss Hotpot?",
         "answers": {
-            "A": "Frando",
-            "B": "Funny",
-            "C": "Fondue",
-            "D": "Fundi"
+            "A": "Fondue",
+            "B": "Frando",
+            "C": "Fundi",
+            "D": "Funduo"
         },
         "correct_answer": "C",
         "next_question": "9"
