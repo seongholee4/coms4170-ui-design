@@ -18,7 +18,7 @@ lessons = {
         "lesson_id": "3",
         "title": "Budae Jjigae Hotpot",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
-        "text": """ It also goes by the English name: army stew. It is a type of spicy kimchi based hotpot (Korean stew) from South Korea that is made with a variety of ingredients, often canned or processed. Common ingredients include ham, sausage, Spam, baked beans, kimchi, instant noodles, gochujang and American cheese. No certain dipping sauce but many people eat with kimchi or cheese.""",
+        "text": """It also goes by the English name: army stew. It is a type of spicy kimchi based hotpot (Korean stew) from South Korea that is made with a variety of ingredients, often canned or processed. Common ingredients include ham, sausage, Spam, baked beans, kimchi, instant noodles, gochujang and American cheese. No certain dipping sauce but many people eat with kimchi or cheese.""",
         "next_lesson": "end"
     },
     "end": {
@@ -40,7 +40,9 @@ quiz_questions = {
             "C": "Image3",
             "D": "Image4"
         },
-        "correct_answer": "B",
+        "correct_answer": "A",
+        "hint": "It is flavored with chilli peppers",
+        "prev_question": "start",
         "next_question": "2"
     },
     "2": {
@@ -53,6 +55,8 @@ quiz_questions = {
             "D": "Image4"
         },
         "correct_answer": "A",
+        "hint": "",
+        "prev_question": "1",
         "next_question": "3"
     },
     "3": {
@@ -65,6 +69,8 @@ quiz_questions = {
             "D": "Image4"
         },
         "correct_answer": "C",
+        "hint": "",
+        "prev_question": "2",
         "next_question": "4"
     },
     "4": {
@@ -76,7 +82,9 @@ quiz_questions = {
             "C": "Sauce3",
             "D": "Sauce4"
         },
-        "correct_answer": "C",
+        "correct_answer": "D",
+        "hint": "",
+        "prev_question": "3",
         "next_question": "5"
     },
     "5": {
@@ -89,6 +97,8 @@ quiz_questions = {
             "D": "Sauce4"
         },
         "correct_answer": "A",
+        "hint": "",
+        "prev_question": "4",
         "next_question": "6"
     },
     "6": {
@@ -100,7 +110,9 @@ quiz_questions = {
             "C": "Hotpot3",
             "D": "Hotpot4"
         },
-        "correct_answer": "B",
+        "correct_answer": "A",
+        "hint": "",
+        "prev_question": "5",
         "next_question": "7"
     },
     "7": {
@@ -113,6 +125,8 @@ quiz_questions = {
             "D": "Hotpot4"
         },
         "correct_answer": "C",
+        "hint": "",
+        "prev_question": "6",
         "next_question": "8"
     },
     "8": {
@@ -125,6 +139,8 @@ quiz_questions = {
             "D": "Funduo"
         },
         "correct_answer": "C",
+        "hint": "",
+        "prev_question": "7",
         "next_question": "9"
     },
     "9": {
@@ -137,6 +153,8 @@ quiz_questions = {
             "D": "Army"
         },
         "correct_answer": "D",
+        "hint": "",
+        "prev_question": "8",
         "next_question": "10"
     },
     "10": {
@@ -149,6 +167,8 @@ quiz_questions = {
             "D": "Pronunciation4"
         },
         "correct_answer": "D",
+        "hint": "",
+        "prev_question": "9",
         "next_question": "end"
     },
 }

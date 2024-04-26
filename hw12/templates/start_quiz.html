@@ -4,9 +4,7 @@
 
 <script type="text/javascript">
     function startQuiz() {
-        if (!sessionStorage.getItem('startTime')) {
-            sessionStorage.setItem('startTime', Date.now());  // Set the timer only if not already set
-        } else {
+        if (sessionStorage.getItem('startTime')) {
             removeTimer();
         }
         window.location.href = '/quiz/1';  // Start the first question of the quiz
@@ -37,8 +35,8 @@
     <h1>Start Your Quiz</h1>
     <p>Test your knowledge by starting the quiz now!</p>
     <!-- Timer display -->
+    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary custom-button">Main Page</button> -->
     <button onclick="startQuiz()" class="btn btn-primary custom-button start_quiz_button">Start Quiz</button>
-    <button onclick="window.location.href='/'" class="btn btn-secondary">Main Page</button>
     <div id="timerDisplay"></div>
 </div>
 

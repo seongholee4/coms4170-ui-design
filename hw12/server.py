@@ -8,6 +8,7 @@ app = Flask(__name__)
 # Temporary storage for user answers
 user_responses = {}
 
+total_questions = len(quiz_questions)
 
 @app.route('/')
 def homepage():
@@ -23,42 +24,45 @@ def start_quiz():
     user_responses.clear()  # Reset answers at the start of a quiz
     return render_template('start_quiz.html')
 
-@app.route('/quiz/<quiz_id>', methods=['GET', 'POST'])
+@app.route('/quiz/<quiz_id>', methods=['GET'])
 def quiz(quiz_id):
     question = quiz_questions.get(str(quiz_id))
     if question is None:
         return "Question not found", 404
 
-    feedback = None
-    show_next = False  # Controls the display of the "Next" button
-    form_disabled = False  # Disable form after submission
+    # Ensure feedback and button states are reset each time the page is loaded
+    feedback = user_responses.get(quiz_id, {}).get('feedback', None)
+    show_next = 'answer' in user_responses.get(quiz_id, {})
 
-    if request.method == 'POST':
-        # Store user's choice in user_responses
-        user_answer = request.form.get('answer')
-        if user_answer:
-            user_responses[quiz_id] = user_answer
-            # Provide immediate feedback
-            if user_answer == question['correct_answer']:
-                feedback = 'Correct!'
-            else:
-                feedback = 'Incorrect!'
-            show_next = True  # Show the "Next" button only after an answer is submitted.
-            form_disabled = True  # Disable the form to prevent re-submission
+    return render_template('quiz.html', question=question, feedback=feedback, show_next=show_next, quiz_id=quiz_id)
 
-    if question['next_question'] == "end" and show_next:
-        return redirect(url_for('results')) # Redirect to results page
+@app.route('/quiz/<quiz_id>/check_answer', methods=['POST'])
+def check_answer(quiz_id):
+    user_answer = request.form.get('answer')
+    question = quiz_questions.get(str(quiz_id))
+    if not user_answer:
+        return jsonify(correct=False, message="No answer selected, please choose an option.")
 
-    return render_template('quiz.html', question=question, feedback=feedback, quiz_id=quiz_id, show_next=show_next, form_disabled=form_disabled)
+    # Store answer and correctness in user_responses
+    correct = user_answer == question['correct_answer']
+    user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
+
+    if correct:
+        return jsonify(correct=True)
+        # return jsonify(correct=True, explanation=question['explanation'])
+    else:
+        hint = question.get('hint', "")
+        return jsonify(correct=False, message="Incorrect! Try again or request a hint.", hint=hint)
 
 @app.route('/quiz_results')
 def results():
     score = 0
-    for qid, ans in user_responses.items():
-        correct_answer = quiz_questions[qid]['correct_answer']
-        if ans == correct_answer:
+    for qid, response in user_responses.items():
+        ans = response['answer']
+        correct = response['correct']
+        if correct:
             score += 1
-    return render_template('quiz_results.html', score=score, total=len(quiz_questions))
+    return render_template('quiz_results.html', score=score, total=total_questions)
 
 
 if __name__ == '__main__':

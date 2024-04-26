@@ -2,51 +2,69 @@
 
 {% block content %}
 
+<link rel="stylesheet" href="{{url_for('static', filename='styles/quiz.css')}}">
+
 <script type="text/javascript">
-    // let question = {{ question | tojson }};
     $(document).ready(function () {
+        // Handle Answer Submission
+        $("#submit_answer").click(function() {
+            $.ajax({
+                type: "POST",
+                url: "/quiz/{{ question.quiz_id }}/check_answer",
+                data: {
+                    answer: $('input[name="answer"]:checked').val(),
+                },
+                success: function(response) {
+                    if (response.correct) {
+                        $("#feedback").html("<div class='alert alert-success'>Correct!</div>");
+                    } else {
+                        console.log(response);
+                        $("#feedback").html("<div class='alert alert-danger'>" + response.message + "</div>");
+                        if (response.hint) {
+                            $("#feedback").append("<div class='hint'>Hint: " + response.hint + "</div>");
+                        }
+                    }
+                }
+            });
+        });
+
+        // Navigate to the next question
         $("#next_button").click(function () {
             if ("{{question.next_question}}" == "end") {
-                window.location.href = "/";
+                window.location.href = "{{ url_for('results') }}";
             } else {
-                window.location.href = "/quiz/{{question.next_question}}";
+                window.location.href = "{{ url_for('quiz', quiz_id=question.next_question) }}";
+            }
+        });
+
+        // Navigate to the previous question
+        $("#prev_button").click(function () {
+            if ("{{question.prev_question}}" == "start") {
+                sessionStorage.removeItem('startTime');
+                window.location.href = "{{ url_for('start_quiz') }}";
+            } else {
+                window.location.href = "{{ url_for('quiz', quiz_id=question.prev_question) }}";
             }
         });
     });
 </script>
 
 
-<div class="container mt-4">
-    <h1>Q{{question.quiz_id}}. {{ question.question }}</h1>
+<div class="mt-4">
+    <h1>Q{{ question.quiz_id }}. {{ question.question }}</h1>
+    
+    <div id="feedback"></div>
 
-    {% if feedback %}
-        <div class="alert alert-info">{{ feedback }}</div>
-    {% endif %}
-
-    <form action="/quiz/{{ question.quiz_id }}" method="post">
-        <fieldset {% if form_disabled %}disabled{% endif %}>
-            <div>
-                {% for answer in question.answers %}
-                    <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
-                    <label for="{{ answer }}">{{ answer }}</label><br>
-                    <!-- {% if answer == question.correct_answer %}
-                        <span class="badge bg-success">Correct</span>
-                    {% endif %} -->
-                {% endfor %}
-            </div>
-            <button type="submit" class="btn btn-primary custom-button" {% if form_disabled %}disabled{% endif %}>Submit</button>
-        </fieldset>
-    </form>
-
-    {% if show_next %}
-        <button onclick="window.location.href=`{{ url_for('quiz', quiz_id=question.next_question) if question.next_question != 'end' else url_for('results') }}`" class="btn btn-primary custom-button">Next</button>
-    {% endif %}
-    <button onclick="window.location.href='/'" class="btn btn-secondary">Main Page</button>
-    <!-- ask when the user clicks the button, the button that redirect the user back to the main page -->
-    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary">Back</button> -->
-
+    <div>
+        {% for answer in question.answers %}
+            <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
+            <label for="{{ answer }}">{{ answer }}</label><br>
+        {% endfor %}
+    </div>
+    
+    <button id="submit_answer" class="btn btn-primary custom-button">Submit</button>
+    <button id="prev_button" class="btn btn-secondary custom-button">Previous</button>
+    <button id="next_button" class="btn btn-primary custom-button">Next</button>
 </div>
-
-
 
 {% endblock %}
