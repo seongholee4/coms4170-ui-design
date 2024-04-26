@@ -50,7 +50,7 @@
 </script>
 
 
-<div class="mt-4">
+<div class="mt-3">
     <h1>Q{{ question.quiz_id }}. {{ question.question }}</h1>
     
     <div id="feedback"></div>
@@ -58,13 +58,18 @@
     <div>
         {% for answer in question.answers %}
             <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
-            <label for="{{ answer }}">{{ answer }}</label><br>
+            <label for="{{ answer }}" class="darkgray_color">{{ answer }}. {{ question.answers[answer] }}</label><br>
         {% endfor %}
     </div>
-    
-    <button id="submit_answer" class="btn btn-primary custom-button">Submit</button>
-    <button id="prev_button" class="btn btn-secondary custom-button">Previous</button>
-    <button id="next_button" class="btn btn-primary custom-button">Next</button>
+    <div class="button-group">
+        <div class="submit-button-container">
+            <button id="submit_answer" class="btn custom-button">Submit</button>
+        </div>
+        <div class="button-group-page">
+            <button id="prev_button" class="btn custom-button">Previous</button>
+            <button id="next_button" class="btn custom-button">Next</button>            
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,5 +1,5 @@
 .jumbotron.text-center {
-    display: flex; /* Use flexbox to center children */
+    display: flex; /* Center children */
     flex-direction: column; /* Stack children vertically */
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically if there is extra space */
@@ -15,7 +15,7 @@
     padding-top: 20px;
     max-width: 400px; /* Maximum width of the card */
     margin-top: 10px;
-    background-color: rgb(72, 34, 31); /* Dark brown background */
+    background-color: rgb(72, 34, 31);
 }
 
 .card:hover {
@@ -37,24 +37,53 @@
     margin-top: 10px;
     width: 100%;
     padding: 10px 20px;
-    padding-top: 10px; /* Add padding to ensure text isn't too close to the border */
+    padding-top: 10px;
     padding-bottom: 10px;
     display: inline-block;
     cursor: pointer;
     text-align: center;
     background-color: rgb(72, 34, 31);
-    border-top: 3px solid rgba(67, 67, 67, 0.3); /* Add a border to the top */
+    border-top: 3px solid rgba(67, 67, 67, 0.3);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to the button */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-button:hover {
-    background-color: rgba(255, 239, 208, 0.5); /* Slightly darker on hover */
+    background-color: rgba(255, 239, 208, 0.5); 
 }
 
 .hint {
     color: #0062cc;
     margin-top: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.button-group-page {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.btn.custom-button {
+    margin-right: 10px;
+}
+
+.submit-button-container {
+    flex-grow: 1; /* Take up available space */
+    display: flex; /* Use flex to layout the button */
+    justify-content: flex-start; /* Align the button to the left */
+}
+
+.button-group .btn:last-child {
+    margin-right: 0; /* No margin for the last button to align properly */
 }
 
