@@ -1,5 +1,60 @@
+.jumbotron.text-center {
+    display: flex; /* Use flexbox to center children */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically if there is extra space */
+}
+
+.card {
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center;
+    padding-top: 20px;
+    max-width: 400px; /* Maximum width of the card */
+    margin-top: 10px;
+    background-color: rgb(72, 34, 31); /* Dark brown background */
+}
+
+.card:hover {
+    box-shadow: 0px 6px 12px rgb(255, 239, 208);
+}
+
+.card img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 70%;
+    height: auto;
+}
+
+.card-button {
+    font-size: 2.5em;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    padding-top: 10px; /* Add padding to ensure text isn't too close to the border */
+    padding-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(72, 34, 31);
+    border-top: 3px solid rgba(67, 67, 67, 0.3); /* Add a border to the top */
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to the button */
+}
+
+.card-button:hover {
+    background-color: rgba(255, 239, 208, 0.5); /* Slightly darker on hover */
+}
 
 .hint {
     color: #0062cc;
     margin-top: 10px;
 }
+

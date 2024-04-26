@@ -1,42 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/quiz.css')}}">
 
-<script type="text/javascript">
-    function startQuiz() {
-        if (sessionStorage.getItem('startTime')) {
-            removeTimer();
-        }
-        window.location.href = '/quiz/1';  // Start the first question of the quiz
-    }
-    function removeTimer() {
-        sessionStorage.removeItem('startTime');  // Clear the timer
-        $('#timerDisplay').hide();  // Hide the timer display when not active
-    }
-
-    $(document).ready(function () {
-        const startTime = sessionStorage.getItem('startTime');
-        if (startTime) {
-            const endTime = Date.now();
-            const elapsed = endTime - parseInt(startTime);
-            const seconds = Math.floor((elapsed / 1000) % 60);
-            const minutes = Math.floor((elapsed / 1000 / 60) % 60);
-            $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
-            $('#timerDisplay').css('display', 'block');  // Show the timer display when active
-            $('#timerDisplay').addClass('alert alert-success');  // Add a green background to the timer display
-        } else {
-            $('#timerDisplay').text(''); // Clears the timer display when not active
-            $('#timerDisplay').hide();  // Hide the timer display when not active
-        }
-    });
-</script>
+<script type="text/javascript" src="{{url_for('static', filename='scripts/quiz.js')}}"></script>
 
 <div class="jumbotron text-center">
-    <h1>Start Your Quiz</h1>
-    <p>Test your knowledge by starting the quiz now!</p>
-    <!-- Timer display -->
-    <!-- <button onclick="window.location.href='/'" class="btn btn-secondary custom-button">Main Page</button> -->
-    <button onclick="startQuiz()" class="btn btn-primary custom-button start_quiz_button">Start Quiz</button>
+    <div class="mt-3">
+        <h1 class="jumbotron-heading darkbrown_color">Start Your Quiz</h1>
+        <p class="lead darkgray_color">Test your knowledge by starting the quiz now!</p>
+    </div>
+    <div class="card darkbrown_bg">
+        <!-- <button onclick="window.location.href='/'" class="btn btn-secondary custom-button">Main Page</button> -->
+        <img src="{{ url_for('static', filename='images/start_quiz.png') }}" alt="Quiz Time" class="center-image">
+        <a href="/quiz/1" class="btn card-button lightgray_color" onclick="startQuiz()">Quiz Time!</a>
+    </div>
     <div id="timerDisplay"></div>
 </div>
 
