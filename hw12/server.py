@@ -62,7 +62,7 @@ def results():
         correct = response['correct']
         if correct:
             score += 1
-    return render_template('quiz_results.html', score=score, total=total_questions)
+    return render_template('quiz_results.html', score=score, total_questions=total_questions)
 
 
 if __name__ == '__main__':

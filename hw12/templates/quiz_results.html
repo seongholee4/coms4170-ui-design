@@ -1,10 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container text-center">
-    <h1>Quiz Results</h1>
-    <p>Your score: {{ score }} out of {{ total }}</p>
-    <button onclick="window.location.href='/'" class="btn btn-primary custom-button">Main Page</button>
+<link rel="stylesheet" href="{{url_for('static', filename='styles/quiz_results.css')}}">
+
+<div class="text-center">
+    <div class="">
+        <h1>
+            Quiz <br>
+            Results
+        </h1>
+    </div>
+    <div class="">
+        <img src="{{ url_for('static', filename='images/hotpot_image_1.png') }}" class="center-image" alt="hotpot_image_1">
+        <div class="">
+            <p>Your score:</p>
+            <p>{{ score }}/{{ total_questions }}</p>
+        </div>
+    </div>
+    <div>
+        <a href="/start_quiz" class="btn custom-button mt-3">Start a new quiz</a>
+        <a href="/" class="btn custom-button mt-3">Main Page</a>
+    </div>
 </div>
 
 {% endblock %}
