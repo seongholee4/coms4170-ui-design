@@ -59,6 +59,12 @@ body {
     text-align: end; 
 }
 
+.custom-button :disabled {
+    background-color: rgb(67, 67, 67);
+    color: rgb(239, 239, 239);
+    cursor: not-allowed;
+}
+
 /* .center-image {
     display: block;
     margin-left: auto;
