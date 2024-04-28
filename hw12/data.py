@@ -4,7 +4,13 @@ lessons = {
         "lesson_id": "1",
         "title": "Sichuan Hotpot",
         "image": "https://hotpotambassador.com/wp-content/uploads/2018/11/chongqing-min-1.jpg",
-        "text": """It uses mala seasoning flavored with chilli peppers and Sichuan pepper for a spicy and numbing flavor. Chongqing hotpots often feature a wide variety of different meats and ingredients, and offer many saucesand condiments to flavor the meat. The typical dipping sauce contains sesame oil and is mixed with crushed fresh garlic and chopped scallions and cilantros. """,
+        "text": """Chongqing hotpots often feature a wide variety of different meats and ingredients """,
+        "flavor": "Spicy and Numbing",
+        "meat": "Thinly shaved beef or lamb",
+        "seasoning": "Mala seasoning with chili pepper and sichuan pepper",
+        "dipping sauce":"Sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro",
+
+        
         "next_lesson": "2"
     },
     "2": {
