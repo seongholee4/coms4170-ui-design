@@ -67,16 +67,20 @@ lessons = {
         },
         "next_lesson": "end"
     },
+    "6": {
+        "lesson_id": "6",
+        "title": "Fondue Hotpot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "text": """In Swiss cuisine, Fondue Chinoise is a local variation of the traditional Chinese hot pot.""",
+         "about": {
+            "flavor": "Rich and cheesy",
+            "meat": "cubes of beef, chicken and pork",
+            "seasoning": "Cheese fondue made with a combination of melted cheeses such as Swiss, Gruyère",
+            "dipping sauce": "None, as the meat and vegetables are dipped directly into the cheese fondue",
+        },
+        "next_lesson": "end"
+    },
     
-
-
-
-
-
-
-
-
-
     "end": {
         "lesson_id": "end",
         "title": "End of lessons",
