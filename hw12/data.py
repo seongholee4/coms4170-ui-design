@@ -5,12 +5,12 @@ lessons = {
         "title": "Sichuan Hotpot",
         "image": "https://hotpotambassador.com/wp-content/uploads/2018/11/chongqing-min-1.jpg",
         "text": """Chongqing hotpots often feature a wide variety of different meats and ingredients """,
-        "flavor": "Spicy and Numbing",
-        "meat": "Thinly shaved beef or lamb",
-        "seasoning": "Mala seasoning with chili pepper and sichuan pepper",
-        "dipping sauce":"Sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro",
-
-        
+        "about": {
+            "flavor": "Spicy and Numbing",
+            "meat": "Thinly shaved beef or lamb",
+            "seasoning": "Mala seasoning with chili pepper and sichuan pepper",
+            "dipping sauce": "Sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro"
+        },
         "next_lesson": "2"
     },
     "2": {
