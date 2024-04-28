@@ -8,6 +8,7 @@ app = Flask(__name__)
 # Temporary storage for user answers
 user_responses = {}
 
+total_lessons = len(lessons)
 total_questions = len(quiz_questions)
 
 @app.route('/')
@@ -17,7 +18,7 @@ def homepage():
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
     lesson = lessons[lesson_id]
-    return render_template('learn.html', lesson = lesson)
+    return render_template('learn.html', lesson = lesson, total_lessons = total_lessons)
 
 @app.route('/start_quiz')
 def start_quiz():

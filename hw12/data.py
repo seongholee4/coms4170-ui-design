@@ -4,6 +4,7 @@ lessons = {
         "lesson_id": "1",
         "title": "Sichuan Hotpot",
         "image": "https://hotpotambassador.com/wp-content/uploads/2018/11/chongqing-min-1.jpg",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
         "text": """Chongqing hotpots often feature a wide variety of different meats and ingredients """,
         "about": {
             "flavor": "Spicy and Numbing",
@@ -16,7 +17,8 @@ lessons = {
     "2": {
         "lesson_id": "2",
         "title": "Beijing Hotpot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/440px-Sukiyaki_01.jpg",
+        "image": "https://via.placeholder.com/300",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
         "text": """It is characterized by its simplicity and the use of copper Mongolian pots.""",
         "about": {
             "flavor": "Savory and aromatic",
@@ -28,21 +30,24 @@ lessons = {
     },
     "3": {
         "lesson_id": "3",
-        "title": "Budae Jjigae Hotpot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
-        "text": """It also goes by the English name: army stew from South Korea processed.""",
+        "title": "Sundubu-jjigae",
+        # blank image 300 width x 300 height url: https://via.placeholder.com/300
+        "image": "https://m.mommindmall.com/web/product/big/202205/89ccf5a7ae0662fb28c0e7e259e0221a.jpg",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
+        "text": """Sundubu-jiggae is a Korean soup cooked with soft tofu and can be prepared in both meat and vegan options.""",
          "about": {
-            "flavor": "Spicy and savoury",
-            "meat": "ham, sausage and/or spam",
-            "seasoning": "Spicy broth made with kimchi, gochujang (Korean chili paste), and various Korean spices",
-            "dipping sauce": "No dipping sauce",
+            "flavor": "savory, and choice of spicy or non-spicy broth",
+            "meat": "beef, seafood, or pork",
+            "seasoning": "kimchi, ham and cheese, dumplings, soysauce, gochugaru and sesame oil",
+            "dipping sauce": "instead of dipping sauce, it is served with a bowl of rice and a raw egg to crack into the stew",
         },
         "next_lesson": "4"
     },
-        "4": {
+    "4": {
         "lesson_id": "4",
         "title": "Coconut Chicken Hotpot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "image": "https://hotpotambassador.com/wp-content/uploads/2018/11/chicken.jpg",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
         "text": """The broth is not made with butter or fatty oils, making it one of the healthier hotpot options.""",
          "about": {
             "flavor": "Rich and creamy coconut flavor with a hint of spice",
@@ -55,10 +60,11 @@ lessons = {
     "5": {
         "lesson_id": "5",
         "title": "Sukiyaki Hotpot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/440px-Sukiyaki_01.jpg",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
         "text": """It is a Japanese dish that is prepared and served in the nabemono (Japanese hot pot).""",
          "about": {
-            "flavor": "sweet and savoury",
+            "flavor": "sweet and savory",
             "meat": "Thinly sliced beef",
             "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
             "dipping sauce": "raw egg dipping sauce",
@@ -68,7 +74,8 @@ lessons = {
     "6": {
         "lesson_id": "6",
         "title": "Fondue Hotpot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "image": "https://via.placeholder.com/300",
+        "dipping_sauce_image": "https://via.placeholder.com/300",
         "text": """In Swiss cuisine, Fondue Chinoise is a local variation of the traditional Chinese hot pot.""",
          "about": {
             "flavor": "Rich and cheesy",
@@ -195,12 +202,12 @@ quiz_questions = {
     },
     "9": {
         "quiz_id": "9",
-        "question": "What does 'BUDAE' mean in English?",
+        "question": "What does the Korean hotpot Sundubu-jjigae mean?",
         "answers": {
-            "A": "Buddha",
-            "B": "Asian",
-            "C": "Kimchi",
-            "D": "Army"
+            "A": "Soft tofu stew",
+            "B": "chicken stew",
+            "C": "beef stew",
+            "D": "pork stew"
         },
         "correct_answer": "D",
         "hint": "",
@@ -219,7 +226,21 @@ quiz_questions = {
         "correct_answer": "D",
         "hint": "",
         "prev_question": "9",
-        "next_question": "end"
+        "next_question": "11"
     },
+    "11": {
+        "quiz_id": "bonus",
+        "question": "What is the main ingredient in the Swiss hotpot?",
+        "answers": {
+            "A": "Cheese",
+            "B": "Beef",
+            "C": "Chicken",
+            "D": "Pork"
+        },
+        "correct_answer": "A",
+        "hint": "",
+        "prev_question": "10",
+        "next_question": "end"
+    }
 }
 
