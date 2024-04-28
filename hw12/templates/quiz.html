@@ -6,7 +6,6 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        // Handle Answer Submission
         $("#submit_answer").click(function() {
             $.ajax({
                 type: "POST",
@@ -28,22 +27,20 @@
             });
         });
 
-        // Navigate to the next question
         $("#right_button").click(function () {
             if ("{{question.next_question}}" == "end") {
-                window.location.href = "{{ url_for('results') }}";
+                window.location.href = "/quiz_results";
             } else {
-                window.location.href = "{{ url_for('quiz', quiz_id=question.next_question) }}";
+                window.location.href = "/quiz/" + (parseInt("{{quiz_id}}")+1);
             }
         });
 
-        // Navigate to the previous question
         $("#left_button").click(function () {
             if ("{{question.prev_question}}" == "start") {
                 sessionStorage.removeItem('startTime');
-                window.location.href = "{{ url_for('start_quiz') }}";
+                window.location.href = "/start_quiz";
             } else {
-                window.location.href = "{{ url_for('quiz', quiz_id=question.prev_question) }}";
+                window.location.href = "/learn/" + (parseInt("{{quiz_id}}")-1);
             }
         });
     });
@@ -53,21 +50,21 @@
 <div class="mt-3 quiz-container">
     <h1>Q{{ question.quiz_id }}. {{ question.question }}</h1>
     
-    <div id="feedback"></div>
+    <div id="feedback" alt="feedback"></div>
 
     <div class="row question-container">
         {% for answer in question.answers %}
-            <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
-            <label for="{{ answer }}" class="darkgray_color">{{ answer }}. {{ question.answers[answer] }}</label><br>
+            <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}">
+            <label for="{{ answer }}" class="darkgray_color" alt="{{answer|capitalize}} label">{{ answer }}. {{ question.answers[answer] }}</label><br>
         {% endfor %}
     </div>
     <div class="quiz-button-group">
         <div class="submit-button-container">
-            <button id="submit_answer" class="btn custom-button">Submit</button>
+            <button id="submit_answer" class="btn custom-button" alt="Submit button">Submit</button>
         </div>
         <div class="quiz-button-container">
-            <button id="left_button" class="btn custom-button"><i class="bi bi-arrow-left"></i></button>
-            <button id="right_button" class="btn custom-button"><i class="bi bi-arrow-right"></i></button>          
+            <button id="left_button" class="btn custom-button" alt="Left button"><i class="bi bi-arrow-left"></i></button>
+            <button id="right_button" class="btn custom-button" alt="Right button"><i class="bi bi-arrow-right"></i></button>   
         </div>
     </div>
 </div>

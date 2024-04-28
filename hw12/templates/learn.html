@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/learn.css')}}">
 
 <script type="text/javascript">
     // let lesson = {{ lesson| tojson}};
     $(document).ready(function () {
-        $("#next_button").click(function () {
+        $("#right_button").click(function () {
             if ("{{lesson.next_lesson}}" == "end") {
                 window.location.href = "/start_quiz";
             } else {
@@ -13,7 +14,7 @@
             }
         });
 
-        $("#previous_button").click(function () {
+        $("#left_button").click(function () {
             if ("{{lesson.lesson_id}}" == "1") {
                 window.location.href = "/";
             } else {
@@ -21,20 +22,35 @@
             }
         });
 
-        // $("#main").click(function () {
-        //     window.location.href = "/";
-        // });
-
     });
 
 </script>
 
-{{lesson.lesson_id}}. {{lesson.title}}<br>
-<br>
-<img src="{{lesson.image}}" alt="{{lesson.title}}" width="300" height="300"><br>
-{{lesson.text}}<br>
-<button id="previous_button" class="btn custom-button">Previous</button>
-<button id="next_button" class="btn custom-button"> Next </button>
+
+<div class="jumbotron">
+    <div class="lesson-name-container row">
+        <span class="lesson-title col-12">{{lesson.lesson_id}}. {{lesson.title}}</span>
+        <span class="lesson-text col-12">{{lesson.text}}</span>
+    </div>
+    <div class="lesson-image-container">
+        <img src="{{lesson.image}}" alt="{{lesson.title}}" width="300" height="300"><br>
+    </div>
+    <div class="lesson-about-container">
+        <div class="row">
+            {% for element, value in lesson.about.items() %}
+            <div class="col-md-6">
+                <strong>{{ element|capitalize }}:</strong> {{ value }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="lesson-buttons-container">
+        <button id="left_button" class="btn custom-button" alt="Left button"><i class="bi bi-arrow-left"></i></button>
+        <button id="right_button" class="btn custom-button" alt="Right button"><i class="bi bi-arrow-right"></i></button>
+    </div>
+
+</div>    
+
 
 {% endblock %}
 
