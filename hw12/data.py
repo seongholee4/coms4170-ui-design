@@ -17,7 +17,13 @@ lessons = {
         "lesson_id": "2",
         "title": "Sukiyaki Hotpot",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/440px-Sukiyaki_01.jpg",
-        "text": """It is a Japanese dish that is prepared and served in the nabemono (Japanese hot pot) style. It consists of meat (usually thinly sliced beef) which is slowly cooked or simmered at the table, alongside vegetables and other ingredients, in a shallow iron pot in a mixture of soy sauce, sugar, and mirin. The ingredients are usually dipped in a small bowl of raw, beaten eggs after being cooked in the pot, and then eaten.""",
+        "text": """It is a Japanese dish that is prepared and served in the nabemono (Japanese hot pot) style. in.""",
+        "about": {
+            "flavor": "Savory and aromatic",
+            "meat": "lamb meat",
+            "seasoning": "Chinese herbs and spices like goji berries, jujubes, and licorice root",
+            "dipping sauce": "Sesame dipping sauce",
+        },
         "next_lesson": "3"
     },
     "3": {
