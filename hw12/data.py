@@ -15,9 +15,9 @@ lessons = {
     },
     "2": {
         "lesson_id": "2",
-        "title": "Sukiyaki Hotpot",
+        "title": "Beijing Hotpot",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sukiyaki_01.jpg/440px-Sukiyaki_01.jpg",
-        "text": """It is a Japanese dish that is prepared and served in the nabemono (Japanese hot pot) style. in.""",
+        "text": """It is characterized by its simplicity and the use of copper Mongolian pots.""",
         "about": {
             "flavor": "Savory and aromatic",
             "meat": "lamb meat",
@@ -30,9 +30,53 @@ lessons = {
         "lesson_id": "3",
         "title": "Budae Jjigae Hotpot",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
-        "text": """It also goes by the English name: army stew. It is a type of spicy kimchi based hotpot (Korean stew) from South Korea that is made with a variety of ingredients, often canned or processed. Common ingredients include ham, sausage, Spam, baked beans, kimchi, instant noodles, gochujang and American cheese. No certain dipping sauce but many people eat with kimchi or cheese.""",
+        "text": """It also goes by the English name: army stew from South Korea processed.""",
+         "about": {
+            "flavor": "Spicy and savoury",
+            "meat": "ham, sausage and/or spam",
+            "seasoning": "Spicy broth made with kimchi, gochujang (Korean chili paste), and various Korean spices",
+            "dipping sauce": "No dipping sauce",
+        },
         "next_lesson": "end"
     },
+
+        "4": {
+        "lesson_id": "4",
+        "title": "Coconut Chicken Hotpot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "text": """The broth is not made with butter or fatty oils, making it one of the healthier hotpot options.""",
+         "about": {
+            "flavor": "Rich and creamy coconut flavor with a hint of spice",
+            "meat": "Chicken, often served with seafood like shrimp and fish balls",
+            "seasoning": "Coconut milk-based broth flavored with lemongrass, galangal, and kaffir lime leaves",
+            "dipping sauce": "Soy Dipping Sauce",
+        },
+        "next_lesson": "end"
+    },
+
+    "5": {
+        "lesson_id": "5",
+        "title": "Sukiyaki Hotpot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Budae_jjigae_%2828587380901%29.jpg/440px-Budae_jjigae_%2828587380901%29.jpg",
+        "text": """It is a Japanese dish that is prepared and served in the nabemono (Japanese hot pot).""",
+         "about": {
+            "flavor": "sweet and savoury",
+            "meat": "Thinly sliced beef",
+            "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
+            "dipping sauce": "raw egg dipping sauce",
+        },
+        "next_lesson": "end"
+    },
+    
+
+
+
+
+
+
+
+
+
     "end": {
         "lesson_id": "end",
         "title": "End of lessons",
