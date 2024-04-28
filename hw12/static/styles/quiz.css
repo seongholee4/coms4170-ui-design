@@ -1,3 +1,5 @@
+
+/* start_quiz.html */
 .jumbotron.text-center {
     display: flex; /* Center children */
     flex-direction: column; /* Stack children vertically */
@@ -55,6 +57,17 @@
     background-color: rgba(255, 239, 208, 0.5); 
 }
 
+
+/* quiz.html */
+
+.quiz-container {
+    border: 3px solid #e0e0e0;
+    /* margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
 .hint {
     color: #0062cc;
     margin-top: 10px;

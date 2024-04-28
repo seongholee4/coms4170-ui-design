@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
 
-body {
+html, body {
     background-color: rgb(255, 239, 208); /* Light beige */
     font-family: 'Quicksand', 'Arial', 'sans-serif';
 }
@@ -51,7 +51,6 @@ body {
     text-align: center;
     display: inline-block;
     font-size: 1.3em; /* 1.5em = 24px */
-
     cursor: pointer;
     margin: 20px 0;
 }

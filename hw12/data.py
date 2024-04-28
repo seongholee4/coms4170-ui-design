@@ -37,9 +37,8 @@ lessons = {
             "seasoning": "Spicy broth made with kimchi, gochujang (Korean chili paste), and various Korean spices",
             "dipping sauce": "No dipping sauce",
         },
-        "next_lesson": "end"
+        "next_lesson": "4"
     },
-
         "4": {
         "lesson_id": "4",
         "title": "Coconut Chicken Hotpot",
@@ -51,9 +50,8 @@ lessons = {
             "seasoning": "Coconut milk-based broth flavored with lemongrass, galangal, and kaffir lime leaves",
             "dipping sauce": "Soy Dipping Sauce",
         },
-        "next_lesson": "end"
+        "next_lesson": "5"
     },
-
     "5": {
         "lesson_id": "5",
         "title": "Sukiyaki Hotpot",
@@ -65,7 +63,7 @@ lessons = {
             "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
             "dipping sauce": "raw egg dipping sauce",
         },
-        "next_lesson": "end"
+        "next_lesson": "6"
     },
     "6": {
         "lesson_id": "6",
@@ -79,14 +77,6 @@ lessons = {
             "dipping sauce": "None, as the meat and vegetables are dipped directly into the cheese fondue",
         },
         "next_lesson": "end"
-    },
-    
-    "end": {
-        "lesson_id": "end",
-        "title": "End of lessons",
-        "image": "",
-        "text": "End of lessons",
-        "next_lesson": ""
     }
 }
 

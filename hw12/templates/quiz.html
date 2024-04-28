@@ -29,7 +29,7 @@
         });
 
         // Navigate to the next question
-        $("#next_button").click(function () {
+        $("#right_button").click(function () {
             if ("{{question.next_question}}" == "end") {
                 window.location.href = "{{ url_for('results') }}";
             } else {
@@ -38,7 +38,7 @@
         });
 
         // Navigate to the previous question
-        $("#prev_button").click(function () {
+        $("#left_button").click(function () {
             if ("{{question.prev_question}}" == "start") {
                 sessionStorage.removeItem('startTime');
                 window.location.href = "{{ url_for('start_quiz') }}";
@@ -50,24 +50,24 @@
 </script>
 
 
-<div class="mt-3">
+<div class="mt-3 quiz-container">
     <h1>Q{{ question.quiz_id }}. {{ question.question }}</h1>
     
     <div id="feedback"></div>
 
-    <div>
+    <div class="row question-container">
         {% for answer in question.answers %}
             <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}">
             <label for="{{ answer }}" class="darkgray_color">{{ answer }}. {{ question.answers[answer] }}</label><br>
         {% endfor %}
     </div>
-    <div class="button-group">
+    <div class="quiz-button-group">
         <div class="submit-button-container">
             <button id="submit_answer" class="btn custom-button">Submit</button>
         </div>
-        <div class="button-group-page">
-            <button id="prev_button" class="btn custom-button">Previous</button>
-            <button id="next_button" class="btn custom-button">Next</button>            
+        <div class="quiz-button-container">
+            <button id="left_button" class="btn custom-button"><i class="bi bi-arrow-left"></i></button>
+            <button id="right_button" class="btn custom-button"><i class="bi bi-arrow-right"></i></button>          
         </div>
     </div>
 </div>
