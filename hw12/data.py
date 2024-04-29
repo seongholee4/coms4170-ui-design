@@ -239,7 +239,7 @@ quiz_questions = {
             "D": "Pork"
         },
         "correct_answer": "A",
-        "hint": "",
+        "feedback": "Fondue Chinoise is commonly made with a combination of melted cheeses.",
         "prev_question": "10",
         "next_question": "end"
     }
