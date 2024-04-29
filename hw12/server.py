@@ -30,10 +30,7 @@ def quiz(quiz_id):
     question = quiz_questions.get(str(quiz_id))
     if question is None:
         return "Question not found", 404
-
-    # Ensure feedback and button states are reset each time the page is loaded
-    feedback = user_responses.get(quiz_id, {}).get('feedback', None)
-    print(feedback)
+    feedback = question.get('feedback', "")
 
     return render_template('quiz.html', question=question, quiz_id=quiz_id, total_questions=total_questions, feedback=feedback)
 
@@ -46,16 +43,28 @@ def check_answer(quiz_id):
 
     # Store answer and correctness in user_responses
     correct = user_answer == question['correct_answer']
-    user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
-    if quiz_id == '11' and correct:
-        user_responses[quiz_id]['bonus'] = True
+    second_attempt = user_responses.get(quiz_id, {}).get('second_attempt')
 
-    if correct:
-        return jsonify(correct=True)
-        # return jsonify(correct=True, explanation=question['explanation'])
+    if correct or (second_attempt and second_attempt['correct'] == True):
+        if second_attempt:
+            user_responses[quiz_id]['second_attempt'] = {'correct': correct, 'answer': second_attempt}
+        else:
+            user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
+        if quiz_id == '11':
+            user_responses[quiz_id]['bonus'] = correct
+        explanation = question.get('explanation', "Well done! Your answer is correct.")
+        return jsonify(correct=True, explanation=explanation)
     else:
-        hint = question.get('hint', "")
-        return jsonify(correct=False, message="Incorrect! Try again or request a hint.", hint=hint)
+        # Check if it's the first attempt
+        if 'second_attempt' not in user_responses.get(quiz_id, {}):
+            # Store the first attempt
+            user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
+            feedback = question.get('feedback', "")
+            return jsonify(correct=False, message="Incorrect! Here is a hint or a feedback to help you choose the correct answer.", feedback=feedback)
+        else:
+            user_responses[quiz_id]['second_attempt'] = {'correct': False, 'answer': user_answer}
+            feedback = question.get('feedback', "")
+            return jsonify(correct=False, message="Incorrect! here is the feedback", feedback=feedback)
 
 @app.route('/quiz_results')
 def results():
@@ -67,11 +76,16 @@ def results():
         correct = response['correct']
         if correct:
             score += 1
-    bonus = user_responses.get('11', {}).get('bonus', False)
+        else:
+            second_attempt = response.get('second_attempt', {})
+            if second_attempt == quiz_questions[quiz_id]['correct_answer']:
+                score += 1
+
+    bonus_question = user_responses.get('11', {})
+    bonus = bonus_question['bonus']
     if bonus == True:
         score += 1
-    return render_template('quiz_results.html', score=score, total_questions=total_questions)
-
+    return render_template('quiz_results.html', score=score, total_questions=total_questions, bonus=bonus)
 
 if __name__ == '__main__':
     app.run(debug=True)
