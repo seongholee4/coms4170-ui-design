@@ -22,9 +22,9 @@
 .clickable-item {
   margin: 10px;
   padding: 10px;
-  background-color: rgb(255, 239, 208); /* Using the light beige as the base color for the background */
-  border: 1px solid rgb(72, 34, 31); /* Using the dark brown for the border */
-  color: rgb(67, 67, 67); /* Using the dark gray for the text color */
+  background-color: rgb(255, 239, 208);
+  border: 1px solid rgb(72, 34, 31);
+  color: rgb(67, 67, 67);
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
@@ -40,14 +40,14 @@
 }
 
 .clickable-item:active {
-  background-color: rgb(72, 34, 31); /* Using dark brown for the active background */
-  color: rgb(255, 239, 208); /* Using light beige for the active text color */
+  background-color: rgb(72, 34, 31);
+  color: rgb(255, 239, 208);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .clickable-item.active-state {
-  background-color: rgb(72, 34, 31); /* Active background color */
-  color: rgb(255, 239, 208); /* Active text color */
+  background-color: rgb(72, 34, 31);
+  color: rgb(255, 239, 208);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -56,6 +56,7 @@
 .lesson-info-div {
   padding: 20px;
 }
+
 .lesson-info-div {
   min-height: 60vh;
 }
@@ -88,24 +89,10 @@
 
 .lesson-buttons-div {
   display: flex;
-  justify-content: space-between; /* Align the children (buttons to the center, lesson counter to the right) */
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   font-size: 1.3em;
   font-weight: bold;
-}
-
-.navigation-buttons {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-}
-
-.navigation-buttons button:first-child {
-  margin-right: 10px;
-}
-
-.navigation-buttons button:last-child {
-  margin-left: 10px;
 }
 
 .lesson-num-div {
@@ -114,4 +101,22 @@
   color: rgb(72, 34, 31);
   border-radius: 5px;
   width: 7vh;
+  margin: 10px auto;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-buttons button {
+  flex-grow: 1;
+}
+
+.navigation-buttons button:first-child {
+  margin: 10px;
+}
+
+.navigation-buttons button:last-child {
+  margin: 10px;
 }
