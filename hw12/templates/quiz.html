@@ -14,13 +14,13 @@
                     answer: $('input[name="answer"]:checked').val(),
                 },
                 success: function(response) {
+                    console.log(response);
                     if (response.correct) {
                         $("#feedback").html("<div class='alert alert-success'>Correct!</div>");
                     } else {
-                        console.log(response);
-                        $("#feedback").html("<div class='alert alert-danger'>" + response.message + "</div>");
-                        if (response.hint) {
-                            $("#feedback").append("<div class='hint'>Hint: " + response.hint + "</div>");
+                        $("#feedback").html("<div class='alert alert-primary'>" + response.message + "</div>");
+                        if (response.feedback) {
+                            $("#feedback").append("<div class='alert alert-info'>Hint: " + response.feedback + "</div>");
                         }
                     }
                 }
@@ -40,33 +40,44 @@
                 sessionStorage.removeItem('startTime');
                 window.location.href = "/start_quiz";
             } else {
-                window.location.href = "/learn/" + (parseInt("{{quiz_id}}")-1);
+                window.location.href = "/quiz/" + (parseInt("{{quiz_id}}")-1);
             }
         });
     });
 </script>
 
 
-<div class="mt-3 quiz-container">
-    <h1>Q{{ question.quiz_id }}. {{ question.question }}</h1>
+<div class="mt-3 quiz-div">
     
-    <div id="feedback" alt="feedback"></div>
 
-    <div class="row question-container">
+    <div class="question-div">
+        <h1>Q{{ quiz_id }}. {{ question.question }}</h1>
+        <p>Choose the correct answer:</p>
+    </div>
+    
+    <div class="feedback-div" id="feedback" alt="feedback"></div>
+
+    <div class="answer-choices-div">
         {% for answer in question.answers %}
             <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}">
             <label for="{{ answer }}" class="darkgray_color" alt="{{answer|capitalize}} label">{{ answer }}. {{ question.answers[answer] }}</label><br>
         {% endfor %}
     </div>
-    <div class="quiz-button-group">
-        <div class="submit-button-container">
+
+    <div class="answer-choices-image-div">
+    </div>
+
+    <div class="quiz-nav-buttons-div">
+        <div class="submit-button-div">
             <button id="submit_answer" class="btn custom-button" alt="Submit button">Submit</button>
         </div>
-        <div class="quiz-button-container">
+        <div class="quiz-num-div">{{quiz_id}} / {{total_questions}}</div>
+        <div class="navigation-buttons">
             <button id="left_button" class="btn custom-button" alt="Left button"><i class="bi bi-chevron-left"></i></button>
             <button id="right_button" class="btn custom-button" alt="Right button"><i class="bi bi-chevron-right"></i></button>
         </div>
     </div>
+
 </div>
 
 {% endblock %}
