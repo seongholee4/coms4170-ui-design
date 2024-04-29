@@ -92,13 +92,13 @@ quiz_questions = {
         "quiz_id": "1",
         "question": "Which one is Sichuan Hotpot?",
         "answers": {
-            "A": "Image1",
-            "B": "Image2",
-            "C": "Image3",
-            "D": "Image4"
+            "A": "https://via.placeholder.com/300",
+            "B": "https://via.placeholder.com/300",
+            "C": "https://via.placeholder.com/300",
+            "D": "https://via.placeholder.com/300"
         },
         "correct_answer": "A",
-        "hint": "It is flavored with chilli peppers",
+        "feedback": "Chongqing hotpots often feature a wide variety of different meats and ingredients",
         "prev_question": "start",
         "next_question": "2"
     },
@@ -106,13 +106,14 @@ quiz_questions = {
         "quiz_id": "2",
         "question": "Which one is Sukiyaki Hotpot?",
         "answers": {
-            "A": "Image1",
-            "B": "Image2",
-            "C": "Image3",
-            "D": "Image4"
+            "A": "https://via.placeholder.com/300",
+            "B": "https://via.placeholder.com/300",
+            "C": "https://via.placeholder.com/300",
+            "D": "https://via.placeholder.com/300"
         },
         "correct_answer": "A",
         "hint": "",
+        "feedback": "Sukiyaki is a Japanese dish that is prepared and served in the nabemono.",
         "prev_question": "1",
         "next_question": "3"
     },
@@ -126,7 +127,7 @@ quiz_questions = {
             "D": "Image4"
         },
         "correct_answer": "C",
-        "hint": "",
+        "feedback": "Coconut Chicken Hotpot is one of the healthier hotpot options.",
         "prev_question": "2",
         "next_question": "4"
     },
@@ -140,7 +141,7 @@ quiz_questions = {
             "D": "Sauce4"
         },
         "correct_answer": "D",
-        "hint": "",
+        "feedback": "Sichuan hotpot is often served with a dipping sauce made of sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro.",
         "prev_question": "3",
         "next_question": "5"
     },
@@ -154,7 +155,7 @@ quiz_questions = {
             "D": "Sauce4"
         },
         "correct_answer": "A",
-        "hint": "",
+        "feedback": "Sukiyaki hotpot is often served with a raw egg dipping sauce.",
         "prev_question": "4",
         "next_question": "6"
     },
@@ -168,7 +169,7 @@ quiz_questions = {
             "D": "Hotpot4"
         },
         "correct_answer": "A",
-        "hint": "",
+        "feedback": "Sukiyaki hotpot is a sweet soy sauce-based broth with mirin, sugar, and sake.",
         "prev_question": "5",
         "next_question": "7"
     },
@@ -182,7 +183,7 @@ quiz_questions = {
             "D": "Hotpot4"
         },
         "correct_answer": "C",
-        "hint": "",
+        "feedback": "Beijing hotpot is characterized by its simplicity and the use of copper Mongolian pots.",
         "prev_question": "6",
         "next_question": "8"
     },
@@ -196,7 +197,7 @@ quiz_questions = {
             "D": "Funduo"
         },
         "correct_answer": "C",
-        "hint": "",
+        "feedback": "Fondue Chinoise is a local variation of the traditional Chinese hot pot.",
         "prev_question": "7",
         "next_question": "9"
     },
@@ -210,7 +211,7 @@ quiz_questions = {
             "D": "pork stew"
         },
         "correct_answer": "D",
-        "hint": "",
+        "feedback": "Sundubu-jiggae is a Korean soup cooked with soft tofu and can be prepared in both meat and vegan options.",
         "prev_question": "8",
         "next_question": "10"
     },
@@ -218,19 +219,19 @@ quiz_questions = {
         "quiz_id": "10",
         "question": "How to pronounce this in Japanese?",
         "answers": {
-            "A": "Pronunciation1",
-            "B": "Pronunciation2",
-            "C": "Pronunciation3",
-            "D": "Pronunciation4"
+            "A": "Sukiyaki",
+            "B": "Chongqing",
+            "C": "Pronounciation3",
+            "D": "Pronounciation4"
         },
         "correct_answer": "D",
-        "hint": "",
+        "feedback": "Sukiyaki is a Japanese dish that is prepared and served in the nabemono.",
         "prev_question": "9",
         "next_question": "11"
     },
     "11": {
-        "quiz_id": "bonus",
-        "question": "What is the main ingredient in the Swiss hotpot?",
+        "quiz_id": "11",
+        "question": "What is the main ingredient in the Fondue Hotpot?",
         "answers": {
             "A": "Cheese",
             "B": "Beef",

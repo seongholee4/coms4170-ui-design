@@ -6,7 +6,7 @@ from data import lessons, quiz_questions
 app = Flask(__name__)
 
 # Temporary storage for user answers
-user_responses = {}
+user_responses = {'answer': "", 'correct': "", 'second_attempt': "", 'bonus': ""}
 
 total_lessons = len(lessons)
 total_questions = len(quiz_questions)
@@ -33,9 +33,9 @@ def quiz(quiz_id):
 
     # Ensure feedback and button states are reset each time the page is loaded
     feedback = user_responses.get(quiz_id, {}).get('feedback', None)
-    show_next = 'answer' in user_responses.get(quiz_id, {})
+    print(feedback)
 
-    return render_template('quiz.html', question=question, feedback=feedback, show_next=show_next, quiz_id=quiz_id)
+    return render_template('quiz.html', question=question, quiz_id=quiz_id, total_questions=total_questions, feedback=feedback)
 
 @app.route('/quiz/<quiz_id>/check_answer', methods=['POST'])
 def check_answer(quiz_id):
@@ -47,6 +47,8 @@ def check_answer(quiz_id):
     # Store answer and correctness in user_responses
     correct = user_answer == question['correct_answer']
     user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
+    if quiz_id == '11' and correct:
+        user_responses[quiz_id]['bonus'] = True
 
     if correct:
         return jsonify(correct=True)
@@ -58,11 +60,16 @@ def check_answer(quiz_id):
 @app.route('/quiz_results')
 def results():
     score = 0
-    for qid, response in user_responses.items():
+    for quiz_id, response in user_responses.items():
+        if quiz_id not in quiz_questions:
+            continue
         ans = response['answer']
         correct = response['correct']
         if correct:
             score += 1
+    bonus = user_responses.get('11', {}).get('bonus', False)
+    if bonus == True:
+        score += 1
     return render_template('quiz_results.html', score=score, total_questions=total_questions)
 
 
