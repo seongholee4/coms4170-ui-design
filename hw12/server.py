@@ -72,20 +72,19 @@ def results():
     for quiz_id, response in user_responses.items():
         if quiz_id not in quiz_questions:
             continue
-        ans = response['answer']
         correct = response['correct']
         if correct:
             score += 1
         else:
             second_attempt = response.get('second_attempt', {})
-            if second_attempt == quiz_questions[quiz_id]['correct_answer']:
+            if second_attempt and second_attempt.get('correct'):
                 score += 1
 
-    bonus_question = user_responses.get('11', {})
-    bonus = bonus_question['bonus']
-    if bonus == True:
-        score += 1
-    return render_template('quiz_results.html', score=score, total_questions=total_questions, bonus=bonus)
+   
+    return render_template('quiz_results.html', score=score, total_questions=total_questions)
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
