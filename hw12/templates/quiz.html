@@ -4,6 +4,31 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename='styles/quiz.css')}}">
 
+<style>
+    .answers-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .answer-group {
+        flex: 0 1 48%; /* Allows two groups per line */
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start; /* Aligns the content to the right */
+    }
+    .answer-img {
+    width: 200px;
+    height: 150px;
+    display: block;
+    margin: 5px auto; /* Centers the image and adds space above and below */
+    }
+
+    .answer-label {
+        display: block;
+        text-align: center; /* Centers the label text */
+    }
+</style>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $("#submit_answer").click(function() {
@@ -57,14 +82,26 @@
     
     <div class="feedback-div" id="feedback" alt="feedback"></div>
 
-    <div class="answer-choices-div">
-        {% for answer in question.answers %}
-            <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}">
-            <label for="{{ answer }}" class="darkgray_color" alt="{{answer|capitalize}} label">{{ answer }}. {{ question.answers[answer] }}</label><br>
-        {% endfor %}
-    </div>
-
-    <div class="answer-choices-image-div">
+    <div class="answer-choices-div answers-container">
+        {% if quiz_id|int >= 8 %}
+            {% for answer, text in question.answers.items() %}
+            <div class="answer-group">
+                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}" class="answer-radio">
+                <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
+                    {{ answer }}. {{ text }}
+                </label>
+            </div>
+            {% endfor %}
+        {% else %}
+            {% for answer, image in question.answers.items() %}
+            <div class="answer-group">
+                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}" class="answer-radio">
+                <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
+                    {{ answer }}. <img src="{{ image }}" alt="Image for option {{ answer }}" class="answer-img">
+                </label>
+            </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <div class="quiz-nav-buttons-div">
