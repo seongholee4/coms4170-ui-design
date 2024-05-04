@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+
+html, body {
+    background-color: rgb(255, 239, 208); /* Light beige */
+    font-family: 'Quicksand', 'Arial', 'sans-serif';
+}
+
+.lightbeige_bg {
+    background-color: rgb(255, 239, 208); /* Light beige */
+}
+
+.lightbeige_color {
+    color: rgb(255, 239, 208); /* Light beige */
+}
+
+.darkbrown_bg {
+    background-color: rgb(72, 34, 31); /* Dark brown */
+}
+
+.darkbrown_color {
+    color: rgb(72, 34, 31); /* Dark brown */
+}
+
+.lightgray_color {
+    color: rgb(239, 239, 239);
+}
+
+.darkgray_color {
+    color: rgb(67, 67, 67);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav {
+    text-align: end; 
+}
+
+.font {
+    font-family: 'Quicksand', 'Arial', 'sans-serif';
+}
+
+.custom-button {
+    background-color: rgb(72, 34, 31);
+    color: rgb(239, 239, 239);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em; /* 1.5em = 24px */
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.custom-button:hover {
+    background-color: rgba(67, 67, 67, 0.7);
+}
+
+/* .center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */

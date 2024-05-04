@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='styles/start_quiz.css')}}">
+
+<script type="text/javascript" src="{{url_for('static', filename='scripts/start_quiz.js')}}"></script>
+
+<script type="text/javascript">
+    function startQuiz() {
+        if (sessionStorage.getItem('startTime')) {
+            sessionStorage.removeItem('startTime');  // Clear the timer
+            $('#timerDisplay').hide();  // Hide the timer display when not active
+        }
+    }
+
+    $(document).ready(function () {
+        const startTime = sessionStorage.getItem('startTime');
+        if (startTime) {
+            const endTime = Date.now();
+            const elapsed = endTime - parseInt(startTime);
+            const seconds = Math.floor((elapsed / 1000) % 60);
+            const minutes = Math.floor((elapsed / 1000 / 60) % 60);
+            $('#timerDisplay').text(`Total Learning Time: ${minutes} minutes, ${seconds} seconds`);
+            $('#timerDisplay').css('display', 'block');  // Show the timer display when active
+            $('#timerDisplay').addClass('alert alert-success');  // Add a green background to the timer display
+        } else {
+            $('#timerDisplay').text(''); // Clears the timer display when not active
+            $('#timerDisplay').hide();  // Hide the timer display when not active
+        }
+    });
+</script>
+
+<div class="jumbotron text-center">
+    <div class="mt-3">
+        <h1 class="jumbotron-heading darkbrown_color" alt="Start quiz header">Start Your Quiz</h1>
+        <p class="lead darkgray_color" alt="Start quiz description">Test your knowledge by starting the quiz now!</p>
+    </div>
+    <div class="img-button-div darkbrown_bg">
+        <img src="{{ url_for('static', filename='images/start_quiz.png') }}" class="center-image" alt="Start quiz image">
+        <a href="/quiz/1" class="btn lightgray_color" onclick="startQuiz()" alt="Start quiz button">Quiz Time!</a>
+    </div>
+    <div id="timerDisplay" class="mt-3"></div>
+</div>
+
+{% endblock %}

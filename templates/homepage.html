@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<script type="text/javascript">
+
+</script>
+
+<link rel="stylesheet" href="{{url_for('static', filename='styles/homepage.css')}}">
+
+<div class="jumbotron text-center">
+    <div class="mt-5 title-with-lines">
+        <h1 class="jumbotron-heading darkbrown_color" alt="Homepage title">Welcome to the Hotpot World!</h1>
+        <p class="lead darkgray_color" alt="Homepage description">Boost your knowledge of different kinds of Hotpot</p>
+    </div>
+    <img src="{{ url_for('static', filename='images/hotpot_image.png') }}" class="img-fluid center-image" alt="hotpot_image">
+    <a href="/learn/1" class="btn custom-button mt-5" onclick="sessionStorage.setItem('startTime', Date.now());" alt="Start Learning button">Let's Get Started</a>
+</div>
+
+{% endblock %}
