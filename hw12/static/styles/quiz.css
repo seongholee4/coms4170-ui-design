@@ -9,6 +9,30 @@
     background-color: white;
 }
 
+/* answer choices */
+
+.answers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.answer-group {
+    flex: 0 1 48%; /* Allows two groups per line */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start; /* Aligns the content to the right */
+}
+.answer-img {
+    width: 200px;
+    height: 150px;
+    display: block;
+    margin: 5px auto; /* Centers the image and adds space above and below */
+}
+
+.answer-label {
+    display: block;
+    text-align: center; /* Centers the label text */
+}
 
 
 /* buttons */

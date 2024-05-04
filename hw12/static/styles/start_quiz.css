@@ -5,7 +5,7 @@
     justify-content: center;
 }
 
-.card {
+.img-button-div {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 15px;
@@ -18,11 +18,11 @@
     background-color: rgb(72, 34, 31);
 }
 
-.card:hover {
+.img-button-div:hover {
     box-shadow: 0px 6px 12px rgb(255, 239, 208);
 }
 
-.card img {
+.img-button-div img {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -32,7 +32,7 @@
     height: auto;
 }
 
-.card-button {
+.btn {
     font-size: 2.5em;
     margin-top: 10px;
     width: 100%;
@@ -51,6 +51,6 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-button:hover {
+.btn:hover {
     background-color: rgba(255, 239, 208, 0.5);
 }
