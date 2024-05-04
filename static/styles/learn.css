@@ -100,7 +100,8 @@
   border: 3px solid rgba(72, 34, 31, 0.7);
   color: rgb(72, 34, 31);
   border-radius: 5px;
-  width: 7vh;
+  width: fit-content;
+  padding: 0px 5px;
   margin: 10px auto;
 }
 
