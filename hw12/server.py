@@ -6,7 +6,7 @@ from data import lessons, quiz_questions
 app = Flask(__name__)
 
 # Temporary storage for user answers
-user_responses = {'answer': "", 'correct': "", 'second_attempt': "", 'bonus': ""}
+user_responses = {'answer': "", 'correct': "", 'second_attempt': ""}
 
 total_lessons = len(lessons)
 total_questions = len(quiz_questions)
@@ -50,17 +50,15 @@ def check_answer(quiz_id):
             user_responses[quiz_id]['second_attempt'] = {'correct': correct, 'answer': second_attempt}
         else:
             user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
-        if quiz_id == '11':
-            user_responses[quiz_id]['bonus'] = correct
         explanation = question.get('explanation', "Well done! Your answer is correct.")
-        return jsonify(correct=True, explanation=explanation)
+        return jsonify(correct=True, message=explanation)
     else:
         # Check if it's the first attempt
         if 'second_attempt' not in user_responses.get(quiz_id, {}):
             # Store the first attempt
             user_responses[quiz_id] = {'answer': user_answer, 'correct': correct}
             feedback = question.get('feedback', "")
-            return jsonify(correct=False, message="Incorrect! Here is a hint or a feedback to help you choose the correct answer.", feedback=feedback)
+            return jsonify(correct=False, message="Incorrect! Here is a hint to help you choose the correct answer.", feedback=feedback)
         else:
             user_responses[quiz_id]['second_attempt'] = {'correct': False, 'answer': user_answer}
             feedback = question.get('feedback', "")

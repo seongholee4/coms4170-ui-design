@@ -15,7 +15,7 @@
                 },
                 success: function(response) {
                     if (response.correct) {
-                        $("#feedback").html("<div class='alert alert-success'>Correct!</div>");
+                        $("#feedback").html("<div class='alert alert-success'>Correct! " + response.message + "</div>");
                     } else {
                         $("#feedback").html("<div class='alert alert-primary'>" + response.message + "</div>");
                         if (response.feedback) {
