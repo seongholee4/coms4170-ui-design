@@ -1,11 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+
 * {
     box-sizing: border-box;
-    border: 1px solid gray;
 }
-html, body {
-    background-color: rgb(255, 239, 208); /* Light beige */
+
+html,
+body {
+    background-color: rgb(255, 239, 208);
+    /* Light beige */
     font-family: 'Quicksand', 'Arial', 'sans-serif';
     max-width: 100vw;
     max-height: 100vh;
@@ -19,25 +21,29 @@ main.container {
     margin: 0;
     padding: 0;
     height: 100vh;
-    max-width:100vw;
+    max-width: 100vw;
     min-height: 93vh;
     max-height: 93vh;
 }
 
 .lightbeige_bg {
-    background-color: rgb(255, 239, 208); /* Light beige */
+    background-color: rgb(255, 239, 208);
+    /* Light beige */
 }
 
 .lightbeige_color {
-    color: rgb(255, 239, 208); /* Light beige */
+    color: rgb(255, 239, 208);
+    /* Light beige */
 }
 
 .darkbrown_bg {
-    background-color: rgb(72, 34, 31); /* Dark brown */
+    background-color: rgb(72, 34, 31);
+    /* Dark brown */
 }
 
 .darkbrown_color {
-    color: rgb(72, 34, 31); /* Dark brown */
+    color: rgb(72, 34, 31);
+    /* Dark brown */
 }
 
 .lightgray_color {
@@ -58,6 +64,7 @@ main.container {
 }
 
 .navbar .container {
+    margin: 0 auto;
     padding: 0 2vw 0 !important;
 }
 
@@ -66,13 +73,17 @@ main.container {
 }
 
 .navbar-expanded-color {
-    background-color: rgba(80, 34, 31, 0.6); /* Warm Terra Cotta */
+    background-color: rgba(80, 34, 31, 0.6);
     border-radius: 5px;
     padding: 0.5vw 1vw 1vw 0;
 }
 
 .navbar-nav {
-    text-align: end; 
+    text-align: end;
+}
+
+.nav-link {
+    font-size: 1.2em;
 }
 
 .font {
@@ -86,18 +97,13 @@ main.container {
     border-radius: 5px;
     padding: 0.5vw 1vw;
     text-align: center;
-    display: inline-block;
-    font-size: 1.3em; /* 1.5em = 24px */
+    font-size: 1.3em;
     cursor: pointer;
-    margin: 20px 0;
+    margin: 2% 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .custom-button:hover {
-    background-color: rgba(67, 67, 67, 0.7);
+    background-color: rgba(67, 67, 67, 0.6);
+    transition: background-color 0.4s, color 0.3s, box-shadow 2.3s;
 }
-
-/* .center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-} */
