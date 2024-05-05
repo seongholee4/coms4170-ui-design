@@ -1,9 +1,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
-
+* {
+    box-sizing: border-box;
+    border: 1px solid gray;
+}
 html, body {
     background-color: rgb(255, 239, 208); /* Light beige */
     font-family: 'Quicksand', 'Arial', 'sans-serif';
+    max-width: 100vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    max-width:100vw;
+    min-height: 93vh;
+    max-height: 93vh;
 }
 
 .lightbeige_bg {
@@ -30,8 +48,27 @@ html, body {
     color: rgb(67, 67, 67);
 }
 
+
+/* navbar */
+
+.navbar {
+    height: 7vh;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .container {
+    padding: 0 2vw 0 !important;
+}
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-expanded-color {
+    background-color: rgba(80, 34, 31, 0.6); /* Warm Terra Cotta */
+    border-radius: 5px;
+    padding: 0.5vw 1vw 1vw 0;
 }
 
 .navbar-nav {
@@ -47,7 +84,7 @@ html, body {
     color: rgb(239, 239, 239);
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 0.5vw 1vw;
     text-align: center;
     display: inline-block;
     font-size: 1.3em; /* 1.5em = 24px */
