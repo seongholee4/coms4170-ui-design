@@ -1,39 +1,54 @@
-.center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50vw;
-    height: auto;
-    margin-bottom: 20px;
-}
 
-.title-with-lines {
-    position: relative;
-    display: inline-block; /* Keep the element width as per the content width */
-    padding: 0 20px; /* Adds space between the text and the borders */
-    margin: 0 auto; /* Adjust margin as needed */
-    line-height: 1vh; /* Adjust line-height to control the vertical space */
-    font-size: 2rem;
-}
 
-.title-with-lines::before,
-.title-with-lines::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 3px;
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 100%;
-    background-color: rgb(67, 67, 67);
-    transform: translateY(-50%);
+    padding: 0;
 }
 
-.title-with-lines::before {
-    left: 0;
-    margin-left: -30px; /* Adjust to control space between the line and the text */
+.title-desc-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    border: 3px solid rgba(72, 34, 31, 0.7);
+    text-align: center;
+    margin: 0 10%;
+    padding: 1% 0;
 }
 
-.title-with-lines::after {
-    right: 0;
-    margin-right: -30px; /* Adjust to control space between the line and the text */
+.title {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
+.desc {
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+}
+
+/* image-button-group */
+.image-button-group {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-image {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 10%;
+}
+
+.custom-button {
+    font-size: 1.9em;
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
