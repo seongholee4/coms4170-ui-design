@@ -1,44 +1,58 @@
-.jumbotron {
+.start_quiz {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0;
 }
 
-.img-button-div {
+.title-desc-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 5% 10%;
+    padding: 1% 0;
+}
+
+.title {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.desc {
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+}
+
+/* button */
+.button-group {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding-top: 20px;
     max-width: 400px;
-    margin-top: 10px;
-    background-color: rgb(72, 34, 31);
+    margin: 0 auto;
+    margin-bottom: 20%;
+    padding: 1% 0;
+    width: 95%;
 }
 
-.img-button-div:hover {
-    box-shadow: 0px 6px 12px rgb(255, 239, 208);
-}
-
-.img-button-div img {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+.button-group img {
+    margin: 1% auto;
     width: 70%;
     height: auto;
 }
 
 .btn {
     font-size: 2.5em;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
     padding: 10px 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     display: inline-block;
     cursor: pointer;
     text-align: center;
@@ -48,7 +62,7 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
