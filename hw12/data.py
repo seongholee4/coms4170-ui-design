@@ -207,9 +207,9 @@ quiz_questions = {
         "question": "What does the Korean hotpot Sundubu-jjigae mean?",
         "answers": {
             "A": "Soft tofu stew",
-            "B": "chicken stew",
-            "C": "beef stew",
-            "D": "pork stew"
+            "B": "Chicken stew",
+            "C": "Beef stew",
+            "D": "Pork stew"
         },
         "correct_answer": "A",
         "feedback": "Sundubu-jiggae is a Korean soup cooked with soft tofu and can be prepared in both meat and vegan options.",
@@ -240,7 +240,7 @@ quiz_questions = {
             "D": "Pork"
         },
         "correct_answer": "A",
-        "feedback": "Fondue Chinoise is commonly made with a combination of melted cheeses.",
+        "feedback": "Fondue Chinoise is commonly made with a combination of melted cheese.",
         "prev_question": "10",
         "next_question": "end"
     }
