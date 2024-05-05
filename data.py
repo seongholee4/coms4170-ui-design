@@ -228,7 +228,7 @@ quiz_questions = {
         "correct_answer": "A",
         "feedback": "Sukiyaki is a Japanese dish that is prepared and served in the nabemono.",
         "prev_question": "9",
-        "next_question": "11"
+        "next_question": "end"
     },
 }
 
