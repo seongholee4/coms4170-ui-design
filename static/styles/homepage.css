@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 50vw;
     height: auto;
     margin-bottom: 20px;
 }
@@ -12,7 +12,8 @@
     display: inline-block; /* Keep the element width as per the content width */
     padding: 0 20px; /* Adds space between the text and the borders */
     margin: 0 auto; /* Adjust margin as needed */
-    line-height: 1; /* Adjust line-height to control the vertical space */
+    line-height: 1vh; /* Adjust line-height to control the vertical space */
+    font-size: 2rem;
 }
 
 .title-with-lines::before,
@@ -20,9 +21,9 @@
     content: '';
     position: absolute;
     top: 50%;
-    width: 3px; /* Width of the border */
-    height: 100%; /* Adjust height to control the length of the lines */
-    background-color: rgb(67, 67, 67); /* Color of the border */
+    width: 3px;
+    height: 100%;
+    background-color: rgb(67, 67, 67);
     transform: translateY(-50%);
 }
 
@@ -35,3 +36,4 @@
     right: 0;
     margin-right: -30px; /* Adjust to control space between the line and the text */
 }
+
