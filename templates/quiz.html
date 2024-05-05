@@ -68,9 +68,12 @@
             {% for answer, image in question.answers.items() %}
             <div class="answer-group">
                 <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}" class="answer-radio">
-                <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
+                <!-- <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
                     {{ answer }}. <img src="{{ image }}" alt="Image for option {{ answer }}" class="answer-img">
-                </label>
+                </label> -->
+                <button type="button" class="image-answer" data-value="{{ answer }}">
+                    <img src="{{ image }}" alt="Image for option {{ answer }}" class="answer-img">
+                </button> 
             </div>
             {% endfor %}
         {% endif %}
