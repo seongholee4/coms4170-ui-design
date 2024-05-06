@@ -43,11 +43,10 @@
 
 .feedback-div {
     font-size: 1.2em;
-    font-weight: bold;
     margin: 0;
     padding: 1% 2%;
-    min-height: 50px;
-    color: rgba(72, 34, 31, 0.7);
+    min-height: 1vh;
+    color: rgba(72, 34, 31, 0.95);
 }
 
 
