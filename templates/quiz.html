@@ -5,32 +5,67 @@
 <link rel="stylesheet" href="{{url_for('static', filename='styles/quiz.css')}}">
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#submit_answer").click(function() {
-            $.ajax({
-                type: "POST",
-                url: "/quiz/{{ question.quiz_id }}/check_answer",
-                data: {
-                    answer: $('input[name="answer"]:checked').val(),
-                },
-                success: function(response) {
-                    if (response.correct) {
-                        $("#feedback").html("<div class='alert alert-success'>Correct! " + response.message + "</div>");
-                    } else {
-                        $("#feedback").html("<div class='alert alert-primary'>" + response.message + "</div>");
-                        if (response.feedback) {
-                            $("#feedback").append("<div class='alert alert-info'>Hint: " + response.feedback + "</div>");
-                        }
-                    }
+
+    // Function to handle the response from the server
+    function handleResponse(response) {
+        $("#feedback").empty();
+        $("#feedback").text(response.message);
+        if (response.correct) {
+            $("#submit-button").text("Next");
+            $(".answer").removeClass("selected");
+            $("#submit-button").attr("id", "next-button");
+            $("#next-button").click(function () {
+                if ("{{ question.next_question }}" == "end") {
+                    window.location.href = "/quiz_results";
+                } else {
+                    window.location.href = "/quiz/{{ question.next_question }}";
                 }
             });
+        } else {
+            if (response.feedback) {
+                $("#feedback").append("<br> Hint: " + response.feedback);
+            }
+        }
+        console.log(response);
+    }
+    
+    $(document).ready(function () {
+
+        var selectedAnswer = "";
+        
+        $(".answer").click(function () {
+            selectedAnswer = $(this).data("value");
+            console.log("Selected Answer: ",selectedAnswer);
+
+            $(".answer").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+        // when the user clicks on the submit button
+        $("#submit-button").click(function () {
+            if (selectedAnswer == "") {
+                $("#feedback").text("No answer selected, please choose an option.");
+                console.log("No answer selected");
+            } else {
+                console.log("User submitted: ", selectedAnswer)
+                $.ajax({
+                    type: "POST",
+                    url: "/quiz/{{ question.quiz_id }}/check_answer",
+                    data: {
+                        answer: selectedAnswer
+                    },
+                    success: function (response) {
+                        handleResponse(response);
+                    }
+                });
+            }
         });
 
         $("#right_button").click(function () {
             if ("{{ question.next_question }}" == "end") {
                 window.location.href = "/quiz_results";
             } else {
-                window.location.href = "/quiz/" + (parseInt("{{quiz_id}}")+1);
+                window.location.href = "/quiz/{{ question.next_question }}";
             }
         });
 
@@ -39,56 +74,54 @@
                 sessionStorage.removeItem('startTime');
                 window.location.href = "/start_quiz";
             } else {
-                window.location.href = "/quiz/" + (parseInt("{{quiz_id}}")-1);
+                window.location.href = "/quiz/{{ question.prev_question }}";
             }
         });
     });
 </script>
 
-<div class="mt-3 quiz-div">
-
-    <div class="question-div">
-        <h1>Q{{ quiz_id }}. {{ question.question }}</h1>
-        <p>Choose the correct answer:</p>
-    </div>
+<div class="container quiz-div">
+    <div class="question-answer-div row">
+        <div class="question-group row">
+            <div class="question-div col-12">
+                <h1 class="col-12">Q{{ quiz_id }}: {{ question.question }}</h1>
+            </div>
+            <div class="col-12 feedback-div lightbeige_bg" id="feedback" alt="feedback"></div>
+        </div>
     
-    <div class="feedback-div" id="feedback" alt="feedback"></div>
-
-    <div class="answers-container">
-        {% if quiz_id|int >= 8 %}
+        <div class="answers-group row">
+            {% if quiz_id|int >= 8 %}
             {% for answer, text in question.answers.items() %}
-            <div class="answer-group">
-                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}" class="answer-radio">
-                <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
-                    {{ answer }}. {{ text }}
-                </label>
+            <div class="answer-group col-6">
+                <button id="{{ answer }}" name="answer" class="answer btn custom-button answer-choice-button" data-value="{{ answer }}" alt="{{answer|capitalize}}"> {{ text }} </button>
             </div>
             {% endfor %}
-        {% else %}
+            {% else %}
             {% for answer, image in question.answers.items() %}
-            <div class="answer-group">
-                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" alt="Select {{answer}}" class="answer-radio">
-                <!-- <label for="{{ answer }}" class="answer-label darkgray_color" alt="{{answer|capitalize}} label">
-                    {{ answer }}. <img src="{{ image }}" alt="Image for option {{ answer }}" class="answer-img">
-                </label> -->
-                <button type="button" class="image-answer" data-value="{{ answer }}">
-                    <img src="{{ image }}" alt="Image for option {{ answer }}" class="answer-img">
-                </button> 
+            <!-- <div class="col-6 col-lg-4 answer-group"> -->
+            <div class="answer-group col-6">
+                <img src="{{ image }}" id="{{ answer }}" name="answer" class="answer answer-img img-fluid" data-value="{{ answer }}" alt="Image for option {{ answer }}">
             </div>
             {% endfor %}
-        {% endif %}
+            {% endif %}
+        </div>
     </div>
 
-    <div class="quiz-nav-buttons-div">
-        <div class="submit-button-div">
-            <button id="submit_answer" class="btn custom-button" alt="Submit button">Submit</button>
+    <div class="">
+        <div class="submit-button-group row">
+            <div class="navigation-buttons">
+                <button id="submit-button" class="btn custom-button submit-button" alt="Submit button">Submit</button>
+            </div>
         </div>
-        <div class="quiz-num-div">{{quiz_id}} / {{total_questions}}</div>
-        <div class="navigation-buttons">
-            <button id="left_button" class="btn custom-button" alt="Left button"><i class="bi bi-chevron-left"></i></button>
-            <button id="right_button" class="btn custom-button" alt="Right button"><i class="bi bi-chevron-right"></i></button>
+        <div class="nav-buttons-group row">
+            <div class="quiz-num-div">{{quiz_id}} / {{total_questions}}</div>
+            <div class="navigation-buttons">
+                <button id="left_button" class="btn custom-button" alt="Left button"><i class="bi bi-chevron-left"></i></button>
+                <button id="right_button" class="btn custom-button" alt="Right button"><i class="bi bi-chevron-right"></i></button>
+            </div>
         </div>
     </div>
+
 
 </div>
 
