@@ -3,23 +3,20 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename='styles/quiz_results.css')}}">
 
-<div class="text-center">
-    <div class="">
-        <h1>
-            Quiz <br>
-            Results
-        </h1>
+<div class="quiz-results-container container">
+    <div class="title-div row">
+        <h1>Quiz Results</h1>
     </div>
-    <div class="">
-        <img src="{{ url_for('static', filename='images/hotpot_image.png') }}" class="center-image" alt="hotpot_image">
-        <div class="">
-            <p>Your score:</p>
-            <p>{{ score }}/{{ total_questions }}</p>
-        </div>
+    <div class="image-div row">
+        <img class="center-image col-12" src="{{ url_for('static', filename='images/hotpot_image.png') }}" alt="hotpot_image">
     </div>
-    <div>
-        <a href="/start_quiz" class="btn custom-button mt-3" alt="Start quiz button">Start a new quiz</a>
-        <a href="/" class="btn custom-button mt-3" alt="Main page button">Main Page</a>
+    <div class="score-div row">
+        <p class="col-12">Your score:</p>
+        <p class="col-12">{{ score }}/{{ total_questions }}</p>
+    </div>
+    <div class="nav-buttons-group row">
+        <a href="/start_quiz" class="btn custom-button" alt="Start quiz button">Start a new quiz</a>
+        <a href="/" class="btn custom-button" alt="Main page button">Main Page</a>
     </div>
 </div>
 
