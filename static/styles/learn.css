@@ -84,6 +84,7 @@
 .clickable-item {
   margin: 2vh 0;
   padding: 2%;
+  font-weight: bold;
   background-color: rgb(255, 239, 208);
   border: 1px solid rgb(72, 34, 31);
   color: rgb(67, 67, 67);

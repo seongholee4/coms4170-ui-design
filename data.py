@@ -32,7 +32,6 @@ lessons = {
     "3": {
         "lesson_id": "3",
         "title": "Sundubu-jjigae (Soft Tofu Stew)",
-        # blank image 300 width x 300 height url: https://via.placeholder.com/300
         "image": lessons["3"]["image"],
         "dipping_sauce_image": lessons["3"]["dipping_sauce_image"],
         "text": """Sundubu-jiggae is cooked with soft tofu with either meat or vegan options.""",
@@ -51,7 +50,7 @@ lessons = {
         "dipping_sauce_image": lessons["4"]["dipping_sauce_image"],
         "text": """The broth is not made with butter or fatty oils, making it one of the healthier hotpot options.""",
          "about": {
-            "flavor": "Rich and creamy coconut flavor with a hint of spice",
+            "flavor": "Rich and creamy coconut flavor.",
             "meat": "Chicken, often served with seafood like shrimp and fish balls",
             "seasoning": "Coconut milk-based broth flavored with lemongrass, galangal, and kaffir lime leaves",
             "dipping sauce": "Soy Sauce Dipping Sauce",
@@ -68,7 +67,7 @@ lessons = {
             "flavor": "sweet and savory",
             "meat": "Thinly sliced beef",
             "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
-            "dipping sauce": "Soy sauce dipping sauce",
+            "dipping sauce": "Egg dipping sauce",
         },
         "next_lesson": "6"
     },
@@ -81,7 +80,7 @@ lessons = {
          "about": {
             "flavor": "Rich and cheesy",
             "meat": "beef, chicken, or pork",
-            "seasoning": "Cheese fondue made with a combination of melted cheeses such as Swiss, Gruyère",
+            "seasoning": "Cheese fondue made with a combination of melted cheese such as Swiss, Gruyère",
             "dipping sauce": "Melted cheese dipping sauce",
         },
         "next_lesson": "end"
