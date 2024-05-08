@@ -168,7 +168,7 @@ quiz_questions = {
             "C": quiz_questions["6"]["answers"]["C"],
             "D": quiz_questions["6"]["answers"]["D"]
         },
-        "correct_answer": "A",
+        "correct_answer": "D",
         "feedback": "Sukiyaki hotpot is a sweet soy sauce-based broth with mirin, sugar, and sake.",
         "prev_question": "5",
         "next_question": "7"
