@@ -6,11 +6,11 @@ lessons = {
         "title": "Sichuan Hotpot",
         "image": lessons["1"]["image"],
         "dipping_sauce_image": lessons["1"]["dipping_sauce_image"],
-        "text": """Sichuan hotpots often feature a wide variety of different meats and ingredients """,
+        "text": """Sichuan hotpots often feature a wide variety of different meats and ingredients. """,
         "about": {
-            "flavor": "Warm or hot spices",
-            "meat": "various kinds of meats such as beef, or lamb",
-            "seasoning": "Mala seasoning with chili pepper and sichuan pepper",
+            "flavor": "The heavily flavored broth and numbing hot spiciness (málà 麻辣) is what Sichuan hotpot is most known for",
+            "meat": "various kinds of meats such as beef, and fresh máodù (毛肚, cow stomach)",
+            "seasoning": "The hotpot soup base user premium butter as its special ingredient, giving the broth a very rich taste that perfectly matches the red hot chili and Sichuan pepper",
             "dipping sauce": "Sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro"
         },
         "next_lesson": "2"
@@ -22,10 +22,10 @@ lessons = {
         "dipping_sauce_image": lessons["2"]["dipping_sauce_image"],
         "text": """It is characterized by its simplicity and the use of copper Mongolian pots.""",
         "about": {
-            "flavor": "Savory and aromatic",
-            "meat": "lamb meat, or vegtables",
-            "seasoning": "Chinese herbs and spices like goji berries, jujubes, and licorice root",
-            "dipping sauce": "Sesame dipping sauce",
+            "flavor": "Savory and aromatic. This style of hotpot is very pure and focuses on the quality of the ingredients – tender and tasty meat and fresh and leafy vegetables -, rather than on the broth",
+            "meat": "Thinly-sliced mutton is one of the most important ingredients",
+            "seasoning": "Ingredients are often cooked in clear water or lightly flavored broth, with some scallions, goji berries, and ginger",
+            "dipping sauce": "Sesame-based dipping sauce Zhīmajiàng (芝麻酱), which tastes somewhat like Tahini sauce (but stronger and sweeter)",
         },
         "next_lesson": "3"
     },
@@ -53,7 +53,7 @@ lessons = {
             "flavor": "Rich and creamy coconut flavor.",
             "meat": "Chicken, often served with seafood like shrimp and fish balls",
             "seasoning": "Coconut milk-based broth flavored with lemongrass, galangal, and kaffir lime leaves",
-            "dipping sauce": "Soy Sauce Dipping Sauce",
+            "dipping sauce": "Soy sauces and some freshly squeezed limejuice",
         },
         "next_lesson": "5"
     },
@@ -67,7 +67,7 @@ lessons = {
             "flavor": "sweet and savory",
             "meat": "Thinly sliced beef",
             "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
-            "dipping sauce": "Egg dipping sauce",
+            "dipping sauce": "Raw egg dipping sauce",
         },
         "next_lesson": "6"
     },
