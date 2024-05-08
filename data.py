@@ -9,8 +9,8 @@ lessons = {
         "text": """Sichuan hotpots often feature a wide variety of different meats and ingredients. """,
         "about": {
             "flavor": "The heavily flavored broth and numbing hot spiciness (málà 麻辣) is what Sichuan hotpot is most known for",
-            "meat": "various kinds of meats such as beef, and fresh máodù (毛肚, cow stomach)",
-            "seasoning": "The hotpot soup base user premium butter as its special ingredient, giving the broth a very rich taste that perfectly matches the red hot chili and Sichuan pepper",
+            "meat": "Various kinds of meats such as beef, and fresh máodù (毛肚, cow stomach)",
+            "seasoning": "The hotpot soup base uses premium butter as its special ingredient, giving the broth a very rich taste that perfectly matches the red hot chili and Sichuan pepper",
             "dipping sauce": "Sesame oil mixed with crushed fresh garlic, chopped scallions, and cilantro"
         },
         "next_lesson": "2"
@@ -22,7 +22,7 @@ lessons = {
         "dipping_sauce_image": lessons["2"]["dipping_sauce_image"],
         "text": """It is characterized by its simplicity and the use of copper Mongolian pots.""",
         "about": {
-            "flavor": "Savory and aromatic. This style of hotpot is very pure and focuses on the quality of the ingredients – tender and tasty meat and fresh and leafy vegetables -, rather than on the broth",
+            "flavor": "Savory and aromatic. This style of hotpot is very pure and focuses on the quality of the ingredients – tender and tasty meat and fresh and leafy vegetables, rather than on the broth",
             "meat": "Thinly-sliced mutton is one of the most important ingredients",
             "seasoning": "Ingredients are often cooked in clear water or lightly flavored broth, with some scallions, goji berries, and ginger",
             "dipping sauce": "Sesame-based dipping sauce Zhīmajiàng (芝麻酱), which tastes somewhat like Tahini sauce (but stronger and sweeter)",
@@ -36,9 +36,9 @@ lessons = {
         "dipping_sauce_image": lessons["3"]["dipping_sauce_image"],
         "text": """Sundubu-jiggae is cooked with soft tofu with either meat or vegan options.""",
          "about": {
-            "flavor": "savory, and choice of spicy or non-spicy broth",
-            "meat": "beef, seafood, or pork",
-            "seasoning": "kimchi, ham and cheese, dumplings, soysauce, pepper-powder, and sesame oil",
+            "flavor": "Savory, and choice of spicy or non-spicy broth",
+            "meat": "Beef, seafood, or pork",
+            "seasoning": "Kimchi, ham and cheese, dumplings, soysauce, pepper-powder, and sesame oil",
             "dipping sauce": "Served with a bowl of rice and an egg on top",
         },
         "next_lesson": "4"
@@ -53,7 +53,7 @@ lessons = {
             "flavor": "Rich and creamy coconut flavor.",
             "meat": "Chicken, often served with seafood like shrimp and fish balls",
             "seasoning": "Coconut milk-based broth flavored with lemongrass, galangal, and kaffir lime leaves",
-            "dipping sauce": "Soy sauces and some freshly squeezed limejuice",
+            "dipping sauce": "Soy sauce and some freshly squeezed limejuice",
         },
         "next_lesson": "5"
     },
@@ -64,7 +64,7 @@ lessons = {
         "dipping_sauce_image": lessons["5"]["dipping_sauce_image"],
         "text": """It is a Japanese dish served in a nabemono (Japanese hot pot).""",
          "about": {
-            "flavor": "sweet and savory",
+            "flavor": "Sweet and savory",
             "meat": "Thinly sliced beef",
             "seasoning": "Sweet soy sauce-based broth with mirin, sugar, and sake",
             "dipping sauce": "Raw egg dipping sauce",
@@ -79,7 +79,7 @@ lessons = {
         "text": """In Swiss cuisine, Fondue Chinoise is a local variation of the traditional Chinese hot pot.""",
          "about": {
             "flavor": "Rich and cheesy",
-            "meat": "beef, chicken, or pork",
+            "meat": "Beef, chicken, or pork",
             "seasoning": "Cheese fondue made with a combination of melted cheese such as Swiss, Gruyère",
             "dipping sauce": "Melted cheese dipping sauce",
         },
