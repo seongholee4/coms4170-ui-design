@@ -1,13 +1,8 @@
 Requirements:
 1. Everyone in the group must check something in to the git repo
 2. You must have a Flask back end and a HTML/JS/JQuery/Bootstrap front end.
-3. You must have a home screen with some kind of “start” button so you know when a
-new user has started the learning process.
-4. On the back end, you must store important information about users’ choices on every
-page. For the quiz, you should store their quiz answers. For the learning activity, you
-should store important selections they make (or at least what time they enter the page). 5. We highly recommend that you don’t hard-code the data or media of the pages into the
-HTML. Rather, it’s much more modular to represent the data in a JSON object, then
-render each page with the correct data (As shown in class Monday 4/8).
+3. You must have a home screen with some kind of “start” button so you know when a new user has started the learning process.
+4. On the back end, you must store important information about users’ choices on every page. For the quiz, you should store their quiz answers. For the learning activity, you should store important selections they make (or at least what time they enter the page). 5. We highly recommend that you don’t hard-code the data or media of the pages into the HTML. Rather, it’s much more modular to represent the data in a JSON object, then render each page with the correct data (As shown in class Monday 4/8).
 6. Although your implementation may vary, you will probably need ~4 routes.
 a. A home page (with a start button)
 b. A learning route that takes a variable for what number lesson the user is on.
