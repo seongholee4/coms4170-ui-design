@@ -154,8 +154,8 @@ quiz_questions = {
             "C": quiz_questions["5"]["answers"]["C"],
             "D": quiz_questions["5"]["answers"]["D"]
         },
-        "correct_answer": "A",
-        "feedback": "Sukiyaki hotpot is often served with a raw egg dipping sauce.",
+        "correct_answer": "D",
+        "feedback": "Sesame-based dipping sauce is used for Beijing hotpot.",
         "prev_question": "4",
         "next_question": "6"
     },
