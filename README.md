@@ -1,15 +1,87 @@
-Requirements:
-1. Everyone in the group must check something in to the git repo
-2. You must have a Flask back end and a HTML/JS/JQuery/Bootstrap front end.
-3. You must have a home screen with some kind of “start” button so you know when a new user has started the learning process.
-4. On the back end, you must store important information about users’ choices on every page. For the quiz, you should store their quiz answers. For the learning activity, you should store important selections they make (or at least what time they enter the page). 5. We highly recommend that you don’t hard-code the data or media of the pages into the HTML. Rather, it’s much more modular to represent the data in a JSON object, then render each page with the correct data (As shown in class Monday 4/8).
-6. Although your implementation may vary, you will probably need ~4 routes.
-a. A home page (with a start button)
-b. A learning route that takes a variable for what number lesson the user is on.
-i. E.g. /learn/1
-c. A quiz route that takes a variable for what number quiz question the user is on.
-i. E.g. /quiz/1 d. A quiz result page.
-7. Each page should show some data, have a few instructions, record some user data, and at least be able to go to advance to the next page.
-a. You should be able to enter your quiz information and receive a score at the end that reflects your correct/incorrect answers.
-8. Your app does not need to work for more than one person at a time. You can assume you only have one user at a time who ever uses the app. In real life, you wouldn’t do this – you’d use a package that implements user accounts and then store all the user data on the user object.
-9. During your TA feedback session, every team member needs to have the app running on their laptop.
+# coms4170-ui-design
+The [`COMS 4170 UI Design`](http://coms4170.cs.columbia.edu/2024-spring/) course is designed to teach students how to design and implement user-centric interfaces for web applications.
+
+
+## Overview
+Our project focuses on creating a learning platform that includes both a `learning activity` and a `quiz`.
+Throughout the project development, we engaged in iterative prototyping, conducted user interviews, and received feedback from our TA and classmates to enhance our design.
+
+
+## Team Members
+| Name                 | GitHub Profile                           |
+|----------------------|------------------------------------------|
+| Lee, Seongho     | [@seongholee4](https://github.com/seongholee4) |
+| RajGirish, Ananya| [@ananya41309](https://github.com/ananya41309) |
+| Zhang, Shiyu     | [@Shiyuuu530](https://github.com/Shiyuuu530)   |
+
+
+## Key Project Features:
+
+- **Frontend Development**: HTML, CSS, and JavaScript
+- **Backend Development**: Python Flask
+- **Iterative Prototyping**: Low-fidelity and high-fidelity prototypes
+- **User Feedback**: Continuous improvements based on feedback sessions
+
+## Project Structure
+
+- **static/**: Contains static files such as CSS, and images.
+- **templates/**: Contains HTML templates.
+- **data.py**: Contains data dictionaries.
+- **image_url.py**: Contains image URLs.
+- **server.py**: server script built with python flask.
+
+## Branches
+This repository contains the source codes for the `COMS 4170 UI Design` course.
+Each assignment is stored in its respective branch.
+
+- **main**: Contains the latest source code updated since the final project.
+- **hw10**: Contains the source code for `hw10`.
+- **hw11**: Contains the source code for `hw11`.
+- **hw12**: Contains the source code for `hw12`.
+- **coms4170-final-project**: Contains the source code for the `final project`.
+
+
+## How to Use
+
+### Clone the Repository
+```bash
+git clone https://github.com/seongholee4/coms4170-ui-design.git
+cd coms4170-ui-design
+```
+* After cloning the repository, change the directory to `coms4170-ui-design`.
+
+### Clone a Specific Branch
+```bash
+git checkout -b <branch-name> origin/<branch-name>
+```
+* Replace `<branch-name>` with `hw10`, `hw11`, `hw12`, etc.
+
+
+### Run the Server
+```bash
+python server.py
+```
+
+### Open the Browser
+Open the browser and navigate to `http://localhost:5000/` to view the project.
+
+## Useful Git Commands
+
+**Create and Switch Branches**:
+```bash
+git checkout <branch-name> # Checkout existing branch
+git branch -a # View all branches
+git branch # View current branch
+git checkout main # Switch to main branch
+```
+
+**Pull and Push Changes**:
+```bash
+git pull origin main # Pull Latest Changes from Main
+git push origin main # Push Changes to Main
+```
+
+## Acknowledgements
+We would like to thank our instructor, `Prof. Lydia Chilton`, our classmates, and our TA, `Asia B. Gray`, for their guidance and support throughout the course and project development.
+
+* The project structure was inspired by the [COMS 4170 UI Design](http://coms4170.cs.columbia.edu/2024-spring/) course.
