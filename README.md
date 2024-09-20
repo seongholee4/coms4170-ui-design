@@ -60,6 +60,7 @@ git checkout -b <branch-name> origin/<branch-name>
 git checkout -b hw10 origin/hw10
 git checkout -b hw11 origin/hw11
 git checkout -b hw12 origin/hw12
+git checkout -b coms4170-final-project origin/coms4170-final-project
 
 git branch # View current branch
 
