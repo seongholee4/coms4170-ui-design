@@ -52,28 +52,26 @@ cd coms4170-ui-design
 
 ### Clone a Specific Branch
 ```bash
+git branch -a # View all branches
+
 git checkout -b <branch-name> origin/<branch-name>
-```
-* Replace `<branch-name>` with `hw10`, `hw11`, `hw12`, etc.
+# Replace `<branch-name>` with `hw10`, `hw11`, `hw12`, etc.
+# For example:
+git checkout -b hw10 origin/hw10
+git checkout -b hw11 origin/hw11
+git checkout -b hw12 origin/hw12
 
+git branch # View current branch
 
-### Run the Server
-```bash
+# To run the server.py in a branch
 python server.py
+
+git checkout main # Switch to main branch
+
 ```
 
 ### Open the Browser
-Open the browser and navigate to `http://localhost:5000/` to view the project.
-
-## Useful Git Commands
-
-**Create and Switch Branches**:
-```bash
-git checkout <branch-name> # Checkout existing branch
-git branch -a # View all branches
-git branch # View current branch
-git checkout main # Switch to main branch
-```
+Open the browser and navigate to `http://localhost:5000/` or `http://0.0.0.0:5000/`.
 
 **Pull and Push Changes**:
 ```bash
